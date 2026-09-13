@@ -1,0 +1,36 @@
+# Dados e artefatos locais
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+contoso/output/*
+!contoso/output/.gitkeep
+analysis/output/*
+!analysis/output/.gitkeep
+analysis/models/*
+!analysis/models/.gitkeep
+dashboard/public/data/*
+!dashboard/public/data/.gitkeep
+
+# Ambientes e dependências
+.venv/
+venv/
+env/
+node_modules/
+.python-version
+
+# Builds
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Editor/OS
+.DS_Store
+.env
+.env.*
+!.env.example
