@@ -13,6 +13,7 @@
    - Título: letras minúsculas, exceto primeira letra, nomes próprios e científicos
    - Citações: sistema autor-data (SOBRENOME, ano)
    - Referências: ordem alfabética pelo sobrenome do autor
+   - **Unicode**: todo texto em português deve usar caracteres Unicode nativos (ex: á, ã, ç, ê, ó) em vez de sequências de escape LaTeX (ex: `\'{a}`, `\~{a}`, `\c{c}`)
 
 ## Estrutura obrigatória do trabalho (UNIVESP)
 
