@@ -53,8 +53,8 @@
 ## 🟢 PODEM SER FEITOS DIRETAMENTE - Formatação/ajustes curtos
 
 ### 10. Revisar texto, estrutura, organização e figuras
-- [ ] Remover páginas em branco, padronizar formatação
-- [ ] Verificar numeração figuras/tabelas, ajustar sumário
-- [ ] Completar referências ABNT (edição, local, editora)
-- [ ] Mover 4 wireframes para seção 2.5 com legendas padronizadas
-- [ ] Atualizar Lista de Ilustrações com páginas corretas
+- [x] Remover páginas em branco, padronizar formatação
+- [x] Verificar numeração figuras/tabelas, ajustar sumário
+- [x] Completar referências ABNT (edição, local, editora)
+- [x] Mover 4 wireframes para seção 2.5 com legendas padronizadas
+- [x] Atualizar Lista de Ilustrações com páginas corretas
