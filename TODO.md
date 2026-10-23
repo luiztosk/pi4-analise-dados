@@ -10,8 +10,8 @@
 - [x] Remover detalhes excessivos de equipamentos/números
 
 ### 2. Resumir e delimitar objetivos específicos (2.1, linhas 265-293)
-- [ ] Reduzir 10 → 5-6 objetivos bem delimitados
-- [ ] Agrupar relacionados (cadastros, produção/vendas, estoque/perdas, manutenção, interface, base dados)
+- [x] Reduzir 10 → 5-6 objetivos bem delimitados
+- [x] Agrupar relacionados (cadastros, produção/vendas, estoque/perdas, manutenção, interface, base dados)
 
 ### 3. Adicionar justificativa cultural (2.2, antes linha 307)
 - [ ] Subseção "Justificativa Cultural": indústria tintas na região, preservação conhecimento, impacto socioeconômico (Araçariguama, Iperó, Itapetininga, Salto)
