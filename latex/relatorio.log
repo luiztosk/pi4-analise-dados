@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.16)  23 OCT 2026 18:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.16)  23 OCT 2026 18:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Relatorio_Parcial/latex/relatorio.tex
-(./Relatorio_Parcial/latex/relatorio.tex
+**/home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.tex
+(/home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
 (/home/luiz/.TinyTeX/texmf-dist/tex/latex/base/article.cls
@@ -206,7 +206,7 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (/home/luiz/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count299
-) (Relatorio_Parcial/latex/relatorio.aux)
+) (/home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.aux)
 \openout1 = `relatorio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -276,7 +276,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
  (/home/luiz/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 Package hyperref Info: Link coloring ON on input line 13.
- (Relatorio_Parcial/latex/relatorio.out) (Relatorio_Parcial/latex/relatorio.out)
+ (/home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.out) (/home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.out)
 \@outlinefile=\write3
 \openout3 = `relatorio.out'.
 
@@ -287,7 +287,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.48 
-      [1] (Relatorio_Parcial/latex/relatorio.toc
+      [1] (/home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.toc
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 3.
  (/home/luiz/.TinyTeX/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
@@ -318,7 +318,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \tf@toc=\write4
 \openout4 = `relatorio.toc'.
 
- [2] (Relatorio_Parcial/latex/relatorio.lof)
+ [2] (/home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.lof)
 \tf@lof=\write5
 \openout5 = `relatorio.lof'.
 
@@ -326,74 +326,74 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 79.
  (/home/luiz/.TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [5] [6] [7]
-Overfull \hbox (6.80724pt too wide) in paragraph at lines 121--122
+) [5] [6] [7] [8]
+Overfull \hbox (6.80724pt too wide) in paragraph at lines 141--142
 []\T1/ptm/m/n/12 A in-ter-face de vi-su-al-iza-ção é im-por-tante porque per-mite ap-re-sen-tar as in-for-mações de maneira
  []
 
-[8] [9] [10]
-Overfull \hbox (144.2306pt too wide) in paragraph at lines 170--171
+[9] [10] [11] [12] [13]
+Overfull \hbox (144.2306pt too wide) in paragraph at lines 186--187
 []\T1/ptm/m/n/12 IBM. Cross-Industry Stan-dard Pro-cess for Data Min-ing ^^U CRISP-DM. Disponível em: https://www.ibm.com/docs/en/spss-
  []
 
-[11]
-Overfull \hbox (181.21417pt too wide) in paragraph at lines 182--183
+
+Overfull \hbox (181.21417pt too wide) in paragraph at lines 198--199
 []\T1/ptm/m/n/12 TANSTACK. TanStack Router Doc-u-men-ta-tion. Disponível em: https://tanstack.com/router/latest/docs/framework/react/overview.
  []
 
-<figures/img1.png, id=113, 415.5525pt x 864.22874pt>
+<figures/img1.png, id=127, 415.5525pt x 864.22874pt>
 File: figures/img1.png Graphic file (type png)
 <use figures/img1.png>
-Package pdftex.def Info: figures/img1.png  used on input line 187.
+Package pdftex.def Info: figures/img1.png  used on input line 203.
 (pdftex.def)             Requested size: 204.85846pt x 426.04726pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/img2.png, id=114, 411.5375pt x 853.1875pt>
+<figures/img2.png, id=128, 411.5375pt x 853.1875pt>
 File: figures/img2.png Graphic file (type png)
 <use figures/img2.png>
-Package pdftex.def Info: figures/img2.png  used on input line 194.
+Package pdftex.def Info: figures/img2.png  used on input line 210.
 (pdftex.def)             Requested size: 204.85846pt x 424.70502pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/img3.png, id=115, 417.56pt x 863.225pt>
+<figures/img3.png, id=129, 417.56pt x 863.225pt>
 File: figures/img3.png Graphic file (type png)
 <use figures/img3.png>
-Package pdftex.def Info: figures/img3.png  used on input line 201.
+Package pdftex.def Info: figures/img3.png  used on input line 217.
 (pdftex.def)             Requested size: 204.85846pt x 423.51082pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/img4.png, id=116, 415.5525pt x 861.2175pt>
+<figures/img4.png, id=130, 415.5525pt x 861.2175pt>
 File: figures/img4.png Graphic file (type png)
 <use figures/img4.png>
-Package pdftex.def Info: figures/img4.png  used on input line 208.
+Package pdftex.def Info: figures/img4.png  used on input line 224.
 (pdftex.def)             Requested size: 204.85846pt x 424.56277pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12] [13 <Relatorio_Parcial/latex/figures/img1.png (PNG copy)>] [14 <Relatorio_Parcial/latex/figures/img2.png (PNG copy)>] [15 <Relatorio_Parcial/latex/figures/img3.png (PNG copy)>] [16 <Relatorio_Parcial/latex/figures/img4.png (PNG copy)>] (Relatorio_Parcial/latex/relatorio.aux)
+[14] [15 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img1.png (PNG copy)>] [16 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img2.png (PNG copy)>] [17 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img3.png (PNG copy)>] [18 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img4.png (PNG copy)>] (/home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
 Package rerunfilecheck Info: File `relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: 38123F0D0B68C7DC5E9714087AB8E55A;1321.
+(rerunfilecheck)             Checksum: 992A64026F5518E020FCC61238521984;1580.
  ) 
 Here is how much of TeX's memory you used:
- 9216 strings out of 469158
- 143745 string characters out of 5460257
- 561883 words of memory out of 5000000
- 38073 multiletter control sequences out of 15000+600000
+ 9220 strings out of 469158
+ 144637 string characters out of 5460257
+ 563883 words of memory out of 5000000
+ 38074 multiletter control sequences out of 15000+600000
  657171 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 74i,6n,79p,1099b,478s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,6n,79p,1373b,478s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/luiz/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></home/luiz/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Relatorio_Parcial/latex/relatorio.pdf (17 pages, 153303 bytes).
+Output written on /home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.pdf (19 pages, 159285 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 177 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

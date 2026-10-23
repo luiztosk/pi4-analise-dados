@@ -43,6 +43,16 @@
 ## DOCX Editing with python-docx
 
 - **NOTE**: We no longer use .docx. The LaTeX file `Relatorio_Parcial/latex/relatorio.tex` is the reference source from now on.
+
+## Instrução Importante para Seções .md
+- Ao copiar e compor seções nos arquivos `docs/secoes_relatorio/.md`, **mantenha o código puro em LaTeX** - não use sintaxe markdown (como `**negrito**`, itálico com `*`, etc.)
+- O LaTeX tem seu próprio sistema de formatação; markdown syntax no .tex causará erros de compilação (asteriscos dobrados aparecendo no texto)
+- Todo texto em negrito no LaTeX deve usar `\textbf{}` ou ser escrito normalmente (o documento já usa fonte ptm com formatação padrão)
+- Após copiar da fonte .docx para o .md e depois para o .tex, verifique se não restaram caracteres markdown
+
+## Trabalho Atual
+- Edição do arquivo `latex/relatorio.tex` baseada nas seções em `docs/secoes_relatorio/`
+- Processo: copiar seção → preparar em docs/secoes_relatorio.md → aplicar no relatorio.tex
 - After each block of edits to the .tex, compile to PDF using:
   ```bash
   pdflatex -interaction=nonstopmode -output-directory Relatorio_Parcial/latex Relatorio_Parcial/latex/relatorio.tex
