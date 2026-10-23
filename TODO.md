@@ -14,7 +14,7 @@
 - [x] Agrupar relacionados (cadastros, produção/vendas, estoque/perdas, manutenção, interface, base dados)
 
 ### 3. Adicionar justificativa cultural (2.2, antes linha 307)
-- [ ] Subseção "Justificativa Cultural": indústria tintas na região, preservação conhecimento, impacto socioeconômico (Araçariguama, Iperó, Itapetininga, Salto)
+- [x] Subseção "Justificativa Cultural": indústria tintas na região, preservação conhecimento, impacto socioeconômico (Araçariguama, Iperó, Itapetininga, Salto)
 
 ### 4. Reescrever justificativa acadêmica (2.2, linhas 307-308)
 - [ ] Basear em estudos: MES/PMEs, Manufatura 4.0, análise dados PMEs
