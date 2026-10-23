@@ -17,9 +17,9 @@
 - [x] Subseção "Justificativa Cultural": indústria tintas na região, preservação conhecimento, impacto socioeconômico (Araçariguama, Iperó, Itapetininga, Salto)
 
 ### 4. Reescrever justificativa acadêmica (2.2, linhas 307-308)
-- [ ] Basear em estudos: MES/PMEs, Manufatura 4.0, análise dados PMEs
-- [ ] Citar lacuna: ausência solução simples/acessível para fábricas pequenas
-- [ ] Conectar: como Tintas MGMT preenche (stack moderna, low-cost, extensível)
+- [x] Basear em estudos: MES/PMEs, Manufatura 4.0, análise dados PMEs
+- [x] Citar lacuna: ausência solução simples/acessível para fábricas pequenas
+- [x] Conectar: como Tintas MGMT preenche (stack moderna, low-cost, extensível)
 
 ### 5. Descrever contribuições para público externo (2.2, após linha 306)
 - [ ] Benefícios empresa: centralização, rastreabilidade lote→entrega, alertas, histórico, base Indústria 4.0
