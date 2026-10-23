@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.16)  23 OCT 2026 18:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.16)  23 OCT 2026 19:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -331,69 +331,117 @@ Overfull \hbox (6.80724pt too wide) in paragraph at lines 141--142
 []\T1/ptm/m/n/12 A in-ter-face de vi-su-al-iza-ção é im-por-tante porque per-mite ap-re-sen-tar as in-for-mações de maneira
  []
 
-[9] [10] [11] [12] [13]
-Overfull \hbox (144.2306pt too wide) in paragraph at lines 186--187
+[9] [10] [11] [12]
+Underfull \hbox (badness 3281) in paragraph at lines 182--182
+\T1/ptm/m/n/12 talhe por em-bal-agem, cor, pro-duto e
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 182--183
+[]\T1/ptm/m/n/12 Formulário de lote com cam-pos obri-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+[]\T1/ptm/m/n/12 Gatilho ao fi-nalizar en-vase
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+\T1/ptm/m/n/12 (\T1/cmtt/m/n/12 envase.status = concluido\T1/ptm/m/n/12 ) $\OMS/ztmcm/m/n/12 !$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+[]\T1/ptm/m/n/12 Tela ded-i-cada `/per-das` com tipos:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+\T1/ptm/m/n/12 pro-cesso, que-bra em-bal-agem, venci-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+\T1/ptm/m/n/12 mento, con-tam-i-nação, outro; campo
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (3.72388pt too wide) in paragraph at lines 196--197
+[]\T1/ptm/m/n/12 Os wire-frames ap-re-sen-ta-dos nesta seção rep-re-sen-tam a primeira or-ga-ni-za-ção das telas. Foram
+ []
+
+<figures/img1.png, id=123, 415.5525pt x 864.22874pt>
+File: figures/img1.png Graphic file (type png)
+<use figures/img1.png>
+Package pdftex.def Info: figures/img1.png  used on input line 200.
+(pdftex.def)             Requested size: 159.33821pt x 331.37741pt.
+<figures/img2.png, id=124, 411.5375pt x 853.1875pt>
+File: figures/img2.png Graphic file (type png)
+<use figures/img2.png>
+Package pdftex.def Info: figures/img2.png  used on input line 209.
+(pdftex.def)             Requested size: 159.33821pt x 330.33334pt.
+<figures/img3.png, id=125, 417.56pt x 863.225pt>
+File: figures/img3.png Graphic file (type png)
+<use figures/img3.png>
+Package pdftex.def Info: figures/img3.png  used on input line 218.
+(pdftex.def)             Requested size: 159.33821pt x 329.39877pt.
+<figures/img4.png, id=126, 415.5525pt x 861.2175pt>
+File: figures/img4.png Graphic file (type png)
+<use figures/img4.png>
+Package pdftex.def Info: figures/img4.png  used on input line 227.
+(pdftex.def)             Requested size: 159.33821pt x 330.2228pt.
+[13] [14 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img1.png (PNG copy)>] [15 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img2.png (PNG copy)>] [16 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img3.png (PNG copy)>] [17 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img4.png (PNG copy)>]
+Overfull \hbox (3.60681pt too wide) in paragraph at lines 238--239
+[]\T1/ptm/b/n/12 Frontend: \T1/ptm/m/n/12 Re-act 19 com Type-Script, uti-lizando TanStack Router para rotea-mento baseado
+ []
+
+[18
+! Font \csname\endcsname=rsfs10 at 12.0pt not loadable: Metric (TFM) file not found.
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.241 \item \textbf
+                   {Perfis de acesso:} administrador, gestor, produÃ§Ã£o, es...
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+]
+Overfull \hbox (144.2306pt too wide) in paragraph at lines 251--252
 []\T1/ptm/m/n/12 IBM. Cross-Industry Stan-dard Pro-cess for Data Min-ing ^^U CRISP-DM. Disponível em: https://www.ibm.com/docs/en/spss-
  []
 
 
-Overfull \hbox (181.21417pt too wide) in paragraph at lines 198--199
+Overfull \hbox (181.21417pt too wide) in paragraph at lines 263--264
 []\T1/ptm/m/n/12 TANSTACK. TanStack Router Doc-u-men-ta-tion. Disponível em: https://tanstack.com/router/latest/docs/framework/react/overview.
  []
 
-<figures/img1.png, id=127, 415.5525pt x 864.22874pt>
-File: figures/img1.png Graphic file (type png)
-<use figures/img1.png>
-Package pdftex.def Info: figures/img1.png  used on input line 203.
-(pdftex.def)             Requested size: 204.85846pt x 426.04726pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/img2.png, id=128, 411.5375pt x 853.1875pt>
-File: figures/img2.png Graphic file (type png)
-<use figures/img2.png>
-Package pdftex.def Info: figures/img2.png  used on input line 210.
-(pdftex.def)             Requested size: 204.85846pt x 424.70502pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/img3.png, id=129, 417.56pt x 863.225pt>
-File: figures/img3.png Graphic file (type png)
-<use figures/img3.png>
-Package pdftex.def Info: figures/img3.png  used on input line 217.
-(pdftex.def)             Requested size: 204.85846pt x 423.51082pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/img4.png, id=130, 415.5525pt x 861.2175pt>
-File: figures/img4.png Graphic file (type png)
-<use figures/img4.png>
-Package pdftex.def Info: figures/img4.png  used on input line 224.
-(pdftex.def)             Requested size: 204.85846pt x 424.56277pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[14] [15 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img1.png (PNG copy)>] [16 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img2.png (PNG copy)>] [17 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img3.png (PNG copy)>] [18 </home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/figures/img4.png (PNG copy)>] (/home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.aux)
+[19] (/home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
 Package rerunfilecheck Info: File `relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: 992A64026F5518E020FCC61238521984;1580.
+(rerunfilecheck)             Checksum: 5F183A6255ABD70755C521C5D6D98A60;1696.
  ) 
 Here is how much of TeX's memory you used:
- 9220 strings out of 469158
- 144637 string characters out of 5460257
- 563883 words of memory out of 5000000
- 38074 multiletter control sequences out of 15000+600000
- 657171 words of font info for 75 fonts, out of 8000000 for 9000
+ 9233 strings out of 469158
+ 144845 string characters out of 5460257
+ 566159 words of memory out of 5000000
+ 38081 multiletter control sequences out of 15000+600000
+ 658071 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 74i,6n,79p,1373b,478s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/luiz/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></home/luiz/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on /home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.pdf (19 pages, 159285 bytes).
+ 74i,10n,79p,1373b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/luiz/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk></home/luiz/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/luiz/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></home/luiz/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on /home/luiz/Documents/Univesp/projeto-integrador-4/pi4-analise-dados/latex/relatorio.pdf (20 pages, 175668 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

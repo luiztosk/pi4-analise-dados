@@ -170,11 +170,76 @@ A estrutura inicial já contempla o cadastro de produtos, cores, embalagens, cli
 
 O dashboard foi planejado para apresentar uma visão geral da operação, com informações sobre produção, vendas, estoque e manutenção. Nesta etapa, os dados apresentados são demonstrativos e servem para avaliar a organização da interface. Eles não representam resultados reais da empresa. A substituição por dados reais deverá ocorrer depois da implementação das tabelas de produção, vendas, estoque e manutenção.
 
-As principais dificuldades encontradas estão relacionadas à transformação de uma descrição inicial da operação em informações que possam ser registradas pelo sistema. A produção aproximada de 150 baldes por semana precisa ser detalhada por embalagem, cor, produto e período. Também é necessário definir o momento em que o produto acabado entra no estoque e como os consumos e perdas serão registrados.
+As principais dificuldades encontradas na transformação da operação em informações registradas pelo sistema podem ser mitigadas pelas seguintes estratégias:
 
-Outra dificuldade está relacionada ao acompanhamento das máquinas. A empresa realiza revisões periódicas, mas ainda é necessário registrar com maior precisão os equipamentos envolvidos, os tipos de manutenção, o período de parada e a relação entre a manutenção e os atrasos na produção. Essas definições serão importantes para que os indicadores representem o funcionamento real da fábrica.
+\begin{table}[h]
+\centering
+\caption{Estratégias de mitigação das principais dificuldades}
+\begin{tabular}{p{0.45\textwidth}p{0.45\textwidth}}
+\hline
+\textbf{Dificuldade} & \textbf{Estratégia de Mitigação} \\
+\hline
+Produção "150 baldes/semana" sem detalhe por embalagem, cor, produto e período & Formulário de lote com campos obrigatórios: produto, cor, embalagem, quantidade planejada e realizada, tanque, datas \\
+\hline
+Incerteza sobre quando o produto acabado entra no estoque & Gatilho ao finalizar envase (\texttt{envase.status = concluido}) $\rightarrow$ registro em \texttt{movimentacao\_estoque} tipo entrada + atualiza \texttt{saldos\_estoque} \\
+\hline
+Registro de perdas e consumo & Tela dedicada `/perdas` com tipos: processo, quebra embalagem, vencimento, contaminação, outro; campo `valor\_estimado` \\
+\hline
+Acompanhamento impreciso de máquinas e paradas & Cadastro de equipamentos com QR code; checklist de revisão; parada: equipamento, causa, início/fim, lote/pedido relacionado \\
+\hline
+Dados dispersos em papel e memória individual & Base única Supabase com RLS; cada perfil acessa apenas seu módulo; dashboard unifica indicadores \\
+\hline
+\end{tabular}
+\label{tab:mitigacao}
+\end{table}
 
-Os wireframes apresentados nos anexos representam a primeira organização das telas. Eles foram feitos de maneira simples, como rascunhos, para demonstrar os campos e informações necessários. A tela de dashboard apresenta indicadores gerais. A tela de produção apresenta lotes e quantidades. A tela de estoque apresenta itens e saldos. A tela de manutenção apresenta equipamentos, revisões e paradas.
+Os wireframes apresentados nesta seção representam a primeira organização das telas. Foram construídos como rascunhos de baixa fidelidade para demonstrar os campos e informações necessários.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.35\textwidth]{figures/img1.png}
+\caption{Figura 1 – Wireframe Gestão. Fonte: Elaboração própria, 2026}
+\label{fig:gestao}
+\end{figure}
+
+A tela de Gestão permite a administração dos cadastros base da aplicação, incluindo produtos, cores, embalagens, matérias-primas, fornecedores, equipamentos, tanques e clientes. Cada cadastro possui campos para identificação, descrição e status, permitindo que o usuário organize as informações básicas antes de iniciar os registros operacionais.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.35\textwidth]{figures/img2.png}
+\caption{Figura 2 – Wireframe Estoque. Fonte: Elaboração própria, 2026}
+\label{fig:estoque}
+\end{figure}
+
+A tela de Estoque apresenta os itens cadastrados com seus respectivos saldos. Possui funcionalidades para visualizar itens abaixo do estoque mínimo, registrar movimentações de entrada e saída, e acompanhar o rastreamento de lotes desde a produção até a entrega.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.35\textwidth]{figures/img3.png}
+\caption{Figura 3 – Wireframe Tela de Produção. Fonte: Elaboração própria, 2026}
+\label{fig:producao}
+\end{figure}
+
+A tela de Produção permite controlar lotes de produção, pedidos e movimentações de estoque. Possui campos para registrar o produto, cor, embalagem, quantidade planejada e realizada, tanque utilizado e datas de início e fim do lote.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.35\textwidth]{figures/img4.png}
+\caption{Figura 4 – Wireframe Manutenção. Fonte: Elaboração própria, 2026}
+\label{fig:manutencao}
+\end{figure}
+
+A tela de Manutenção organiza revisões periódicas, equipamentos com QR code e controle de paradas (preventiva e corretiva). Possui campos para registrar o equipamento envolvido, tipo de manutenção, data, causa, período de parada e responsável.
+
+\subsubsection{Arquitetura da Solução}
+O aplicativo foi desenvolvido com tecnologias web modernas, seguindo uma arquitetura full-stack:
+
+\begin{itemize}
+\item \textbf{Frontend:} React 19 com TypeScript, utilizando TanStack Router para roteamento baseado em arquivos e TanStack Start para renderização no servidor (SSR). Para estilização, utiliza Tailwind CSS v4 com componentes acessíveis do Radix UI. A visualização de dados é feita com Recharts, e formulários com validação são construídos com React Hook Form e Zod.
+\item \textbf{Banco de dados e Backend:} Supabase (PostgreSQL + Auth + Real-time) com Row Level Security (RLS) para controle de acesso por perfil de usuário.
+\item \textbf{Estrutura de rotas:} Inclui módulos para login, cadastro, dashboard, cadastros, produção, pedidos, estoque, envase, compras, perdas, manutenção, atrasos, alertas, relatórios e configurações.
+\item \textbf{Perfis de acesso:} administrador, gestor, produção, estoque, vendas e manutenção.
+\end{itemize}
 
 De modo geral, os resultados preliminares confirmam a pertinência da proposta. O Tintas MGMT possui uma estrutura inicial capaz de receber os dados da empresa e transformá-los em informações organizadas. O protótipo desenvolvido representa um primeiro passo para a criação de uma solução de acompanhamento operacional e estabelece a base para os ajustes que serão realizados na continuidade do projeto.
 
@@ -196,34 +261,5 @@ REACT. React Learn. Disponível em: https://react.dev/learn. Acesso em: 2026.
 SUPABASE. Local Development and Row Level Security Documentation. Disponível em: https://supabase.com/docs/. Acesso em: 2026.
 
 TANSTACK. TanStack Router Documentation. Disponível em: https://tanstack.com/router/latest/docs/framework/react/overview. Acesso em: 2026.
-
-\section{Anexos}
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/img1.png}
-\caption{Wireframe Gestão}
-\label{fig:gestao}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/img2.png}
-\caption{Wireframe Estoque}
-\label{fig:estoque}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/img3.png}
-\caption{Wireframe Tela de Produção}
-\label{fig:producao}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/img4.png}
-\caption{Wireframe Manutenção}
-\label{fig:manutencao}
-\end{figure}
 
 \end{document}

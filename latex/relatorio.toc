@@ -6,5 +6,5 @@
 \contentsline {subsection}{\numberline {2.4}Fundamentação teórica}{8}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Metodologia}{10}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Resultados preliminares: solução inicial}{12}{subsection.2.6}%
-\contentsline {section}{\numberline {3}Referências}{14}{section.3}%
-\contentsline {section}{\numberline {4}Anexos}{14}{section.4}%
+\contentsline {subsubsection}{\numberline {2.6.1}Arquitetura da Solução}{18}{subsubsection.2.6.1}%
+\contentsline {section}{\numberline {3}Referências}{19}{section.3}%
