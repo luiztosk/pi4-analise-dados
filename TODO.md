@@ -5,9 +5,9 @@
 ## 🔴 EXIGEM APROVAÇÃO - Escrita de textos longos (mais que 1 frase/legenda)
 
 ### 1. Sintetizar o resumo (RESUMO, linhas 177-185)
-- [ ] Reduzir para ≤ 250 palavras (atualmente ~300)
-- [ ] Manter: problema, Tintas MGMT, escopo inicial, palavras-chave
-- [ ] Remover detalhes excessivos de equipamentos/números
+- [x] Reduzir para ≤ 250 palavras (atualmente ~220)
+- [x] Manter: problema, Tintas MGMT, escopo inicial, palavras-chave
+- [x] Remover detalhes excessivos de equipamentos/números
 
 ### 2. Resumir e delimitar objetivos específicos (2.1, linhas 265-293)
 - [ ] Reduzir 10 → 5-6 objetivos bem delimitados

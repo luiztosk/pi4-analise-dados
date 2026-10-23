@@ -42,19 +42,15 @@
 
 ## DOCX Editing with python-docx
 
-- Use `python-docx` library to edit `.docx` files
-- After each block of edits, convert to PDF using:
+- **NOTE**: We no longer use .docx. The LaTeX file `Relatorio_Parcial/latex/relatorio.tex` is the reference source from now on.
+- After each block of edits to the .tex, compile to PDF using:
   ```bash
-  soffice --headless --convert-to pdf 'documento.docx'
+  pdflatex -interaction=nonstopmode -output-directory Relatorio_Parcial/latex Relatorio_Parcial/latex/relatorio.tex
   ```
-- Compare the generated PDF with the delivered version to verify no formatting degradation
-- Maintain a file with all previous versions for comparison
-- Use `soffice` (LibreOffice CLI), not `libreoffice` command directly
-
-## 4-Step Edit Workflow
-
-1. **Edit** - Modify DOCX using `python-docx`
-2. **Convert** - `soffice --headless --convert-to pdf 'versoes/relatorio_vX.docx' --outdir versoes`
-3. **Render pages** - `pdftoppm -png -r 100 versoes/relatorio_vX.pdf versoes/relatorio_vX/pages/page` (images stored in `versoes/<version>/pages/`)
-4. **Save Version** - Copy new DOCX and PDF to `versoes/relatorio_vX.docx/pdf`
-5. **Compare** - Verify no formatting degradation vs delivered version
+  (run twice to resolve table of contents / cross-references)
+- Render pages for visual check:
+  ```bash
+  pdftoppm -png -r 100 Relatorio_Parcial/latex/relatorio.pdf Relatorio_Parcial/latex/page
+  ```
+- Compare the generated PDF vs previous version to verify no formatting degradation
+- Use `pdflatex` (TeX Live / TinyTeX), not `soffice`/`libreoffice` for the main report
