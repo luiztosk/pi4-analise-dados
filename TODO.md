@@ -1,18 +1,13 @@
-# TODO
+- [ ] Sintetizar o resumo (atualmente > 250 palavras)
+- [ ] Resumir e delimitar bem os objetivos específicos ao foco da pesquisa
+- [ ] Adicionar justificativa cultural
+- [ ] Reescrever justificativa acadêmica baseada em estudos prévios, mostrando lacunas e relevância
+- [ ] Descrever contribuições da pesquisa para o público externo participante
+- [ ] Adicionar discussões com referenciais teóricos na fundamentação (articular com problema de pesquisa)
+- [ ] Demonstrar passos do Design Thinking na metodologia
+- [ ] Descrever solução inicial com imagens da interface do sistema
+- [ ] Clarificar como minimizar as dificuldades da empresa
+- [ ] Revisar texto, estrutura e organização (remover páginas em branco, formatar)
+- [ ] Inserir figuras no corpo do texto com título, descrição e fonte 
 
-## Próximos passos
-
-- [ ] 1. Configurar o Contoso Data Generator V2
-- [ ] 2. Gerar os 100 mil pedidos em CSV
-- [ ] 3. Validar e organizar os dados brutos
-- [ ] 4. Implementar a pipeline offline de análise de dados
-- [ ] 5. Criar features e conjuntos para aprendizado de máquina
-- [ ] 6. Treinar e avaliar modelos simples e explicáveis
-- [ ] 7. Exportar agregados, métricas e resultados para o dashboard
-- [ ] 8. Criar o dashboard estático com React, Vite e ECharts
-- [ ] 9. Testar o dashboard e os dados estáticos
-- [ ] 10. Configurar o Cloudflare Workers Static Assets como SPA
-- [ ] 11. Publicar e validar o build no Cloudflare
-- [ ] 12. Revisar a documentação e o fluxo de reprodução
-
-> Os subpassos de cada item serão adicionados posteriormente.
+ 
