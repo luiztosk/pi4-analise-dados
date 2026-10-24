@@ -1,60 +1,57 @@
-# TODO - Correções do Relatório Parcial
+# TODO - Relatório Final (Tintas MGMT)
 
-*Detalhes técnicos em `docs/plano-detalhado.md`*
+Baseado no modelo: `Relatorio_Final/docs/modelos/Modelo_Relatorio_Final.pdf`
+Relatorio_Parcial/ foi ARQUIVADO - não editar mais essa pasta.
 
-## 🔴 EXIGEM APROVAÇÃO - Escrita de textos longos (mais que 1 frase/legenda)
+## 🔴 EXIGEM APROVAÇÃO - Escrita de textos longos
 
-### 1. Sintetizar o resumo (RESUMO, linhas 177-185)
-- [x] Reduzir para ≤ 250 palavras (atualmente ~220)
-- [x] Manter: problema, Tintas MGMT, escopo inicial, palavras-chave
-- [x] Remover detalhes excessivos de equipamentos/números
+### 1. Capa: adicionar "Vídeo de apresentação do Projeto Integrador"
+- Incluir box com `<link>` conforme modelo (página 1 do Modelo_Relatorio_Final.pdf)
 
-### 2. Resumir e delimitar objetivos específicos (2.1, linhas 265-293)
-- [x] Reduzir 10 → 5-6 objetivos bem delimitados
-- [x] Agrupar relacionados (cadastros, produção/vendas, estoque/perdas, manutenção, interface, base dados)
+### 2. Folha de rosto: adicionar campo "Tutor"
+- Modelo indica: "Tutor: (Nome do Tutor)" na folha de rosto
 
-### 3. Adicionar justificativa cultural (2.2, antes linha 307)
-- [x] Subseção "Justificativa Cultural": indústria tintas na região, preservação conhecimento, impacto socioeconômico (Araçariguama, Iperó, Itapetininga, Salto)
+### 3. Seção 3 - RESULTADOS: SOLUÇÃO FINAL (placeholder + parágrafo de abertura)
+- Conforme modelo (página 11): demonstrar criação de soluções com base na metodologia UNIVESP (ouvir, criar, implementar)
+- Incluir imagens/storyboards/ilustrações que demonstrem visualmente a solução adotada
+- Descrição detalhada do protótipo e de sua aplicação
+- Placeholder para feedbacks coletados junto à comunidade
+- Parágrafo de abertura: descrever resultados obtidos em cada passo da construção da solução
 
-### 4. Reescrever justificativa acadêmica (2.2, linhas 307-308)
-- [x] Basear em estudos: MES/PMEs, Manufatura 4.0, análise dados PMEs
-- [x] Citar lacuna: ausência solução simples/acessível para fábricas pequenas
-- [x] Conectar: como Tintas MGMT preenche (stack moderna, low-cost, extensível)
+### 4. Seção 4 - CONSIDERAÇÕES FINAIS (placeholder + parágrafo de abertura)
+- Conforme modelo (página 12): retomar objetivos e contexto do Projeto Integrador
+- 3 itens: retomada dos resultados à luz das referências estudadas; contribuições e limitações do trabalho realizado; impacto da solução na comunidade externa
+- Parágrafo de abertura contextualizando as considerações finais
 
-### 5. Descrever contribuições para público externo (2.2, após linha 306)
-- [ ] Benefícios empresa: centralização, rastreabilidade lote→entrega, alertas, histórico, base Indústria 4.0
-
-### 6. Fundamentação: articular referenciais com problema (2.3, linhas 315-335)
-- [ ] Conectar cada referencial ao problema:
-  - Análise dados → acompanhar produção/vendas/estoque/perdas
-  - Manutenção preditiva → paradas motores/bomba/tanque
-  - Indústria 4.0/sensores → evolução futura
-  - ML → previsão demanda/risco (futuro)
-  - Norman/Nielsen → perfis usuários diversos (RBAC)
-  - Elmasri/Navathe → modelagem relacional catálogos/operacional
-  - OWASP → autenticação Supabase + RLS + perfis acesso
-- [ ] Expandir para 5-6 parágrafos articulados
-
-### 7. Metodologia: demonstrar passos Design Thinking (2.4, linhas 343-359)
-- [ ] Estruturar em 5 fases: Empatizar, Definir, Idear, Prototipar, Testar
-- [ ] Mapear cada fase ao código real (ver `docs/plano-detalhado.md` tabela)
-- [ ] Substituir "primeira/segunda etapa" por nomes fases DT
-
-### 8. Solução inicial: descrever com imagens da interface (2.5, linhas 379-395)
-- [ ] Mover Figs 1-4 dos Anexos para corpo da seção 2.5
-- [ ] Para cada wireframe: imagem + legenda "Figura X – Wireframe [nome]. Fonte: Elaboração própria, 2026" + descrição campos/componentes
-- [ ] Detalhar arquitetura: React 19 + TanStack Start + Supabase + Tailwind + Recharts
-- [ ] Incluir prints telas reais (login, dashboard, cadastros) - stack em `package.json`
-
-### 9. Clarificar minimização dificuldades empresa (2.5, linhas 389-392)
-- [ ] Transformar "dificuldades" em "estratégias de mitigação" (tabela)
-- [ ] Mapear: detalhar produção → formulário lote; entrada estoque → gatilho envase; perdas → tela dedicada; máquinas → cadastro QR + checklist + parada
+### 5. ANEXOS / APÊNDICES (opcional, conforme modelo páginas 14-15)
+- Decidir se incluir anexos e/ou apêndices
+- Ordenar por letras (Anexo A, Anexo B / Apêndice A, Apêndice B)
 
 ## 🟢 PODEM SER FEITOS DIRETAMENTE - Formatação/ajustes curtos
 
-### 10. Revisar texto, estrutura, organização e figuras
-- [x] Remover páginas em branco, padronizar formatação
-- [x] Verificar numeração figuras/tabelas, ajustar sumário
-- [x] Completar referências ABNT (edição, local, editora)
-- [x] Mover 4 wireframes para seção 2.5 com legendas padronizadas
-- [x] Atualizar Lista de Ilustrações com páginas corretas
+### 6. Ajustar numeração de seções conforme modelo (1, 2, 3, 4; subseções 2.1-2.5)
+- Verificar que títulos de capítulos estejam em negrito, maiúsculas, alinhados à esquerda
+- Subtítulos em maiúsculas e minúsculas (ex: "2.1 Objetivos")
+
+### 7. Verificar paginação: numeração só a partir da Introdução
+- Capa e folha de rosto sem número de página (pagestyle empty)
+- Sumário e listas sem número visível
+- Numeração aparece a partir da Introdução, canto superior direito
+
+### 8. Verificar formatação de texto conforme modelo
+- Fonte: Times New Roman 12pt para texto, 10pt para citações > 3 linhas
+- Espaçamento 1,5
+- Margens: esquerda e superior 3cm; direita e inferior 2cm (já configurado)
+- Parágrafos separados por uma linha em branco
+
+### 9. Adicionar Lista de Tabelas (opcional, conforme modelo página 5)
+- Se houver tabelas no documento, incluir lista de tabelas
+
+### 10. Revisar referências ABNT (ordem alfabética pelo sobrenome)
+- Verificar citações no formato (AUTOR, ano)
+- Referências completas com edição, local, editora
+
+### 11. Dados pendentes de coleta (placeholders)
+- Resultados reais de produção, vendas, estoque, manutenção (não implementados ainda)
+- Feedbacks da comunidade sobre a solução
+- Dados de sensores / ML (futuro, fora do escopo inicial)

@@ -51,16 +51,17 @@
 - Após copiar da fonte .docx para o .md e depois para o .tex, verifique se não restaram caracteres markdown
 
 ## Trabalho Atual
-- Edição do arquivo `latex/relatorio.tex` baseada nas seções em `docs/secoes_relatorio/`
-- Processo: copiar seção → preparar em docs/secoes_relatorio.md → aplicar no relatorio.tex
+- Pasta `Relatorio_Parcial/` foi ARQUIVADA (TODO e seções relocadas). Não editar mais essa pasta.
+- Agora trabalhando em `Relatorio_Final/latex/relatorio_final.tex`, baseado no modelo `Relatorio_Final/docs/modelos/Modelo_Relatorio_Final.pdf`.
+- Processo: preparar seções → aplicar no relatorio_final.tex → compilar com pdflatex.
 - After each block of edits to the .tex, compile to PDF using:
   ```bash
-  pdflatex -interaction=nonstopmode -output-directory Relatorio_Parcial/latex Relatorio_Parcial/latex/relatorio.tex
+  pdflatex -interaction=nonstopmode -output-directory Relatorio_Final/latex Relatorio_Final/latex/relatorio_final.tex
   ```
   (run twice to resolve table of contents / cross-references)
 - Render pages for visual check:
   ```bash
-  pdftoppm -png -r 100 Relatorio_Parcial/latex/relatorio.pdf Relatorio_Parcial/latex/page
+  pdftoppm -png -r 100 Relatorio_Final/latex/relatorio_final.pdf Relatorio_Final/latex/page
   ```
 - Compare the generated PDF vs previous version to verify no formatting degradation
 - Use `pdflatex` (TeX Live / TinyTeX), not `soffice`/`libreoffice` for the main report
