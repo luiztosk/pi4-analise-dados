@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
 \usepackage{graphicx}
 \usepackage{geometry}
 \geometry{left=3cm,right=2cm,top=3cm,bottom=2cm}
@@ -15,8 +16,6 @@
 \rhead{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \usepackage{needspace}
-\renewcommand{\contentsname}{Sumário}
-\renewcommand{\listfigurename}{Lista de Figuras}
 \begin{document}
 \pagenumbering{arabic}
 \setcounter{page}{1}
@@ -154,9 +153,9 @@ A justificativa cultural está relacionada à preservação do conhecimento oper
 
 A justificativa acadêmica deste trabalho está relacionada à aplicação de conhecimentos de desenvolvimento web, banco de dados, organização da informação, análise de dados e visualização. O trabalho permite estudar um problema real e transformá-lo em uma proposta tecnológica, passando pelas etapas de levantamento, definição de requisitos, modelagem, construção de protótipo e avaliação inicial.
 
-Estudos relacionados apontam que sistemas MES/ERP para PMEs são complexos, caros e representam overkill para fábricas de pequeno porte. A Manufatura 4.0 foca em grandes indústrias com sensores IoT, sem abordar a organização básica de dados. Já a análise de dados em PMEs apresenta uma lacuna entre "ter dados" e "usar dados", em decorrência da falta de ferramenta acessível.
+Estudos relacionados apontam que sistemas MES/ERP para PMEs são complexos, caros e representam um exagero para fábricas de pequeno porte. A Manufatura 4.0 foca em grandes indústrias com sensores IoT, sem abordar a organização básica de dados. Já a análise de dados em PMEs apresenta uma lacuna entre "ter dados" e "usar dados", em decorrência da falta de ferramenta acessível.
 
-O Tintas MGMT preenche essa lacuna ao propor uma solução web simples, de baixo custo e com deploy gratuito (Vercel + Supabase free tier), focada na organização dos dados antes de análises avançadas. A proposta estabelece uma base para futuro aprendizado de máquina e integração de sensores, possui RBAC nativo para separação de responsabilidades (produção, vendas, estoque, manutenção) e é extensível: o schema do Supabase permite adicionar sensores e ML sem refatorar o frontend.
+O Tintas MGMT preenche essa lacuna ao propor uma solução web simples, de baixo custo e com implantação gratuita (Vercel + Supabase, plano gratuito), focada na organização dos dados antes de análises avançadas. A proposta estabelece uma base para futuro aprendizado de máquina e integração de sensores, possui RBAC nativo para separação de responsabilidades (produção, vendas, estoque, manutenção) e é extensível: o schema do Supabase permite adicionar sensores e ML sem refatorar o frontend.
 
 Diante dessas necessidades, formula-se a seguinte pergunta-problema que orienta este estudo: Como desenvolver uma solução digital simples e organizada capaz de reunir os dados de produção, vendas, estoque, perdas e manutenção de uma fábrica de tintas, facilitando o acompanhamento da operação e a visualização dos resultados?
 
@@ -170,13 +169,12 @@ O sistema proposto traz benefícios concretos para a fábrica de tintas:
 
 - Centralização de dados: Substitui cadernos, planilhas e anotações dispersas por uma base única e organizada, garantindo que todas as informações estejam em um único local de fácil consulta.
 - Rastreabilidade completa: É possível acompanhar a produção desde o recebimento das matérias-primas até a entrega dos produtos acabados, incluindo lotes, cores, embalagens e quantidades.
-- Identificação de perdas e ganhos: O sistema registra perdas, atrasos e motivos, permitindo identificar quais etapas do processo apresentam maiores desvios e oportunidades de melhoria.
 - Tomada de decisão mais segura: Com dados organizados e indicadores claros, a gestão pode tomar decisões mais embasadas sobre compras, produção e manutenção, reduzindo a dependência da memória ou de anotações isoladas.
-- Support for growth: Uma base de dados organizada facilita o crescimento da empresa, facilitando a identificação de necessidades e oportunidades de expansão.
 
 2. Contribuições Socioeconômicas
 - Apoio a empresas reais: O sistema simples e centralizado facilita a consulta de informações, reduz a dependência de registros dispersos e contribui para decisões mais seguras.
-- Support for growth: Uma base de dados organizada facilita a identificação de necessidades e oportunidades, suportando o crescimento da empresa ao longo do tempo.
+- Identificação de perdas e ganhos: O sistema registra perdas, atrasos e motivos, permitindo identificar quais etapas do processo apresentam maiores desvios e oportunidades de melhoria.
+- Suporte ao crescimento: Uma base de dados organizada facilita a identificação de necessidades e oportunidades, suportando o crescimento da empresa ao longo do tempo.
 - Justificativa acadêmica: O trabalho permite estudar um problema real e transformá-lo em uma proposta tecnológica, passando pelas etapas de levantamento, definição de requisitos, modelagem, construção de protótipo e avaliação inicial, contribuindo para a produção científica na área de análise de dados e desenvolvimento web.
 
 3. Contribuições Acadêmicas e Técnicas
@@ -253,7 +251,7 @@ Os wireframes apresentados nesta seção representam a primeira organização da
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.35\textwidth]{figures/img1.png}
-\caption{Figura 1 – Wireframe Gestão. Fonte: Elaboração própria, 2026}
+\caption{Wireframe Gestão. Fonte: Elaboração própria, 2026}
 \label{fig:gestao}
 \end{figure}
 
@@ -262,7 +260,7 @@ A tela de Gestão permite a administração dos cadastros base da aplicação, i
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.35\textwidth]{figures/img2.png}
-\caption{Figura 2 – Wireframe Estoque. Fonte: Elaboração própria, 2026}
+\caption{Wireframe Estoque. Fonte: Elaboração própria, 2026}
 \label{fig:estoque}
 \end{figure}
 
@@ -271,7 +269,7 @@ A tela de Estoque apresenta os itens cadastrados com seus respectivos saldos. Po
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.35\textwidth]{figures/img3.png}
-\caption{Figura 3 – Wireframe Tela de Produção. Fonte: Elaboração própria, 2026}
+\caption{Wireframe Tela de Produção. Fonte: Elaboração própria, 2026}
 \label{fig:producao}
 \end{figure}
 
@@ -280,7 +278,7 @@ A tela de Produção permite controlar lotes de produção, pedidos e movimenta�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.35\textwidth]{figures/img4.png}
-\caption{Figura 4 – Wireframe Manutenção. Fonte: Elaboração própria, 2026}
+\caption{Wireframe Manutenção. Fonte: Elaboração própria, 2026}
 \label{fig:manutencao}
 \end{figure}
 
@@ -310,13 +308,13 @@ Dessa forma, sugere-se que, neste capítulo, seja feita a descrição detalhada 
 Importante: quando se tratar de projetos desenvolvidos com a participação de crianças e adolescentes, não é permitida a inclusão de fotos deles sem a autorização de seus pais ou responsáveis.
 
 \subsubsection{Solução adotada}
-Placeholder para descrição detalhada da solução final adotada, incluindo arquitetura, tecnologias utilizadas e funcionalidades implementadas.
+[PLACEHOLDER PARA DESCRIÇÃO DETALHADA DA SOLUÇÃO FINAL ADOTADA, INCLUINDO ARQUITETURA, TECNOLOGIAS UTILIZADAS E FUNCIONALIDADES IMPLEMENTADAS.]
 
 \subsubsection{Resultados obtidos}
-Placeholder para apresentação dos resultados obtidos em cada etapa da metodologia (ouvir, criar, implementar), com indicação de melhorias realizadas com base em feedbacks.
+[PLACEHOLDER PARA APRESENTAÇÃO DOS RESULTADOS OBTIDOS EM CADA ETAPA DA METODOLOGIA (OUVIR, CRIAR, IMPLEMENTAR), COM INDICAÇÃO DE MELHORIAS REALIZADAS COM BASE EM FEEDBACKS.]
 
 \subsubsection{Feedback da comunidade}
-Placeholder para registros de feedbacks coletados junto à comunidade onde o projeto foi desenvolvido, incluindo sugestões de melhoria e validações da solução.
+[PLACEHOLDER PARA REGISTROS DE FEEDBACKS COLETADOS JUNTO À COMUNIDADE ONDE O PROJETO FOI DESENVOLVIDO, INCLUINDO SUGESTÕES DE MELHORIA E VALIDAÇÕES DA SOLUÇÃO.]
 
 \newpage
 \section{CONSIDERAÇÕES FINAIS}
@@ -329,7 +327,7 @@ Deve-se retomar os objetivos e o contexto em que o Projeto Integrador foi desenv
 \item Impacto da solução na comunidade externa.
 \end{itemize}
 
-Placeholder para considerações finais detalhadas, conectando os resultados do projeto aos objetivos iniciais e discutindo o impacto da solução na comunidade externa.
+[PLACEHOLDER PARA CONSIDERAÇÕES FINAIS DETALHADAS, CONECTANDO OS RESULTADOS DO PROJETO AOS OBJETIVOS INICIAIS E DISCUTINDO O IMPACTO DA SOLUÇÃO NA COMUNIDADE EXTERNA.]
 
 \newpage
 \section{REFERÊNCIAS}
