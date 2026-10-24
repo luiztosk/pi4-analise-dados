@@ -34,3 +34,10 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# latex
+*.aux
+*.log
+*.out
+*.toc
+*.lof
