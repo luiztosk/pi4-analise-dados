@@ -29,29 +29,29 @@
 % ============ CAPA ============
 \begin{titlepage}
 \centering
-\vspace*{2cm}
-{\Large\bfseries UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO\par}
+% \vspace*{1cm}
+{\large\bfseries UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO\par}
 \vspace{2cm}
-{\huge\bfseries Tintas MGMT: Sistema de Organização e\par}
-\vspace{0.3cm}
-{\large Análise de Dados Empresarial\par}
-\vspace{3.5cm}
 {\normalsize Jessica Fabiane Costa de Medeiros\par}
 {\normalsize Luiz Henrique Ferreira Silva\par}
 {\normalsize Mikael Silva\par}
 {\normalsize Rafael Massao Okumura\par}
 {\normalsize Thainá Alzira Carvalho Vieira Batista\par}
 {\normalsize Willian Pires da Silva\par}
-\vfill
-{\normalsize Araçariguama, Iperó, Itapetininga, Salto - SP\par}
-{\normalsize 2026\par}
-
-\vspace{1cm}
+\vspace{2.5cm}
+{\large\bfseries Tintas MGMT: Sistema de Organização e\par}
+\vspace{0.3cm}
+{\large\bfseries Análise de Dados Empresarial\par}
+\vspace{3cm}
 \fbox{\parbox{\textwidth}{
 \centering
 \textbf{Vídeo de apresentação do Projeto Integrador}\\[0.3cm]
 <link>
 }}
+\vfill
+{\large Araçariguama, Iperó, Itapetininga, Salto - SP\par}
+{\large 2026\par}
+
 \end{titlepage}
 \pagestyle{empty}
 
@@ -59,17 +59,24 @@
 \pagebreak
 \thispagestyle{empty}
 \begin{center}
-\textbf{UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO}\\[0.8cm]
-\textbf{Curso de Bacharelado em Tecnologia da Informação, Ciência de Dados e Engenharia de Computação}\\[1.2cm]
-\textbf{Título:} Tintas MGMT: Sistema de Organização e Análise de Dados Empresarial\\[0.8cm]
-\textbf{Nota descritiva:} Relatório Técnico-Científico apresentado na disciplina de Projeto Integrador para o curso de Bacharelado em Tecnologia da Informação, Ciência de Dados e Engenharia de Computação da Universidade Virtual do Estado de São Paulo (UNIVESP).\\[1.2cm]
-\textbf{Local:} Araçariguama, Iperó, Itapetininga, Salto - SP\\[0.4cm]
-\textbf{Ano:} 2026
+% \centering
+% \vspace*{1cm}
+{\large\bfseries UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO\par}
+\vspace{2cm}
+\vspace{2.5cm}
+{\large\bfseries Tintas MGMT: Sistema de Organização e\par}
+\vspace{0.3cm}
+{\large\bfseries Análise de Dados Empresarial\par}
+\vspace{3cm}
+{\linespread{1}\selectfont\leftskip=7cm   Relatório Técnico-Científico apresentado na disciplina de Projeto Integrador para o curso de Bacharelado em Tecnologia da Informação, Ciência de Dados e Engenharia de Computação da Universidade Virtual do Estado de São Paulo (UNIVESP).\par}
+% \\[1.2cm]
+\vfill
+{\large Araçariguama, Iperó, Itapetininga, Salto - SP\par}
+{\large 2026\par}
 \end{center}
-\pagebreak
 
 % ============ RESUMO ============
-\pagebreak
+\clearpage
 \thispagestyle{empty}
 
 {\centering
@@ -79,27 +86,29 @@ Relatório Técnico-Científico\\[0.3cm]
 Curso de Bacharelado em Tecnologia da Informação, Ciência de Dados e Engenharia de Computação\\[0.3cm]
 Tutora: Kelly de Santana Santana\\[0.3cm]
 2026\par}
-\vspace{0.5cm}
+\vspace{1cm}
 
 \section*{Resumo}
 
-{\setlength{\baselineskip}{12pt}
+{\linespread{1}\selectfont\setlength{\baselineskip}{12pt}
 A operação de uma fábrica de tintas envolve compra de matérias-primas, produção, envase, armazenamento, venda e manutenção de equipamentos. Quando essas informações não são registradas de forma organizada, torna-se difícil acompanhar a quantidade produzida, o volume vendido, os tamanhos de embalagem mais procurados, as cores de maior saída, os níveis de estoque, as perdas e as paradas de máquinas. Essa dificuldade prejudica o planejamento da produção e a tomada de decisões da empresa. Com base no levantamento inicial realizado junto a uma fábrica de tintas, este trabalho propõe o desenvolvimento do Tintas MGMT, um aplicativo web destinado à organização dos dados operacionais da empresa e à visualização dos resultados. A solução reúne informações sobre produção, vendas, estoque, perdas, atrasos e manutenção em uma estrutura única e de fácil consulta. O código-fonte está disponível em: https://github.com/RafaelMassao/TintasMGMT. O projeto está relacionado ao desenvolvimento de análise de dados e à preparação de uma interface para apresentação das informações. O desenvolvimento inicial contempla a definição do problema, o levantamento de requisitos, a criação da estrutura do aplicativo, o cadastro das informações básicas e a elaboração de wireframes das principais telas. A continuidade do projeto deverá permitir a substituição de registros dispersos por dados organizados, possibilitando análises mais precisas e melhorias no acompanhamento da operação.
-}
+\par}
+
+\vspace{2cm}
 
 \textbf{Palavras-chave:} Aplicativo web; análise de dados; fábrica de tintas; produção; estoque; manutenção; visualização de informações.
-\pagebreak
-
-% ============ SUMÁRIO ============
-\tableofcontents
-\pagebreak
 
 % ============ LISTA DE FIGURAS ============
+\clearpage
 \listoffigures
 
-\pagestyle{fancy}
+% ============ SUMÁRIO ============
+\clearpage
+\tableofcontents
+
 % ============ CORPO ============
 \clearpage
+\pagestyle{fancy}
 \section{INTRODUÇÃO}
 \enlargethispage{-4\baselineskip}
 A escolha deste tema surgiu a partir do contato com uma empresa do segmento de fabricação de tintas e do levantamento inicial de suas atividades. A empresa trabalha com a fabricação e o envase de tintas em diferentes tamanhos de embalagem, realiza compras de fornecedores, mantém estoque de matérias-primas e produtos acabados e realiza revisões periódicas em seus equipamentos. Também possui máquinas de pintura destinadas à locação.
