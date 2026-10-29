@@ -1,4 +1,15 @@
 \documentclass[12pt,a4paper]{article}
+\usepackage{needspace}
+\usepackage{tocloft}
+
+\usepackage{graphicx}
+
+\usepackage{tocloft}
+\renewcommand{\cftfigpresnum}{FIGURA }
+\renewcommand{\cftfigaftersnum}{ --- }
+\setfloatlink{}
+\addtolength{\cftfignumwidth}{4em} 
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[brazil]{babel}
@@ -112,7 +123,7 @@ A operação de uma fábrica de tintas envolve compra de matérias-primas, produ
 \enlargethispage{-4\baselineskip}
 A escolha deste tema surgiu a partir do contato com uma empresa do segmento de fabricação de tintas e do levantamento inicial de suas atividades. A empresa trabalha com a fabricação e o envase de tintas em diferentes tamanhos de embalagem, realiza compras de fornecedores, mantém estoque de matérias-primas e produtos acabados e realiza revisões periódicas em seus equipamentos. Também possui máquinas de pintura destinadas à locação.
 
-Durante as conversas iniciais, foram identificados alguns dos principais elementos da operação: um tanque de tinta com capacidade aproximada de 2.000 litros, três motores trituradores, uma bomba responsável pelo deslocamento da tinta, um tanque para água e um equipamento de envase manual. A empresa trabalha com embalagens de 1 litro, 3,6 litros e 18 litros e informou uma produção média aproximada de 150 baldes por semana.
+Durante as conversas iniciais, foram identificados alguns dos principais elementos da operação: um tanque de tinta com capacidade aproximada de 2.000 litros, três motores trituradores, uma bomba responsável pelo deslocamento da tinta, um tanque para água e um equipamento de envase manual. A empresa trabalha com embalagens de 1 litro, 3,6 litros e 18 litros.
 
 Essas informações mostram que existe uma operação produtiva que pode ser acompanhada por meio de dados. Entretanto, conhecer apenas a quantidade aproximada produzida não é suficiente para compreender o desempenho da fábrica. É necessário saber quais produtos foram fabricados, quais cores foram utilizadas, quais tamanhos de embalagem foram produzidos, quanto foi vendido, quais matérias-primas foram consumidas e quais equipamentos permaneceram parados.
 
@@ -130,12 +141,12 @@ Desenvolver um aplicativo web capaz de organizar dados de produção, vendas, es
 
 \subsubsection*{Objetivos específicos}
 \begin{itemize}
-\item \textbf{Cadastros base —} Registrar produtos, cores, embalagens, matérias-primas, fornecedores, equipamentos, tanques e clientes em catálogos organizados.
-\item \textbf{Produção e vendas —} Controlar lotes de produção, pedidos, movimentações de estoque e rastrear a entrada de produtos acabados.
-\item \textbf{Perdas e atrasos —} Registrar perdas de produção, motivos e paradas de máquinas com data, causa e responsável.
-\item \textbf{Manutenção —} Organizar revisões periódicas, equipamentos com QR code e controle de paradas (preventiva e corretiva).
-\item \textbf{Interface e indicadores —} Criar dashboard com indicadores de produção, vendas, estoque e manutenção para apoio à decisão.
-\item \textbf{Base de dados —} Preparar esquema relacional no Supabase com RLS, perfis de acesso e extensível para futuras análises e sensores.
+\item \textbf{Cadastros base —} Desenvolver cadastros base por meio de catálogos organizados onde serão registrados produtos, cores, embalagens, matérias-primas, fornecedores, equipamentos, tanques e clientes.
+\item \textbf{Produção e vendas —} Desenvolver sistema de monitoramento de produção e vendas por meio de controle de lotes de produção, pedidos e movimentações de estoque onde será possível rastrear a entrada de produtos acabados a fim de possibilitar maior controle dos produtos.
+\item \textbf{Perdas e atrasos —} Desenvolver registro de perdas e atrasos por meio de controle de paradas de máquinas onde serão registrados motivos e responsáveis com data.
+\item \textbf{Manutenção —} Desenvolver organização de manutenção por meio de controle de revisões periódicas onde serão registrados equipamentos com QR code e paradas (preventiva e corretiva).
+\item \textbf{Interface e indicadores —} Desenvolver interface e indicadores por meio de dashboard onde serão apresentados indicadores de produção, vendas, estoque e manutenção para apoio à decisão.
+\item \textbf{Base de dados —} Preparar base de dados por meio de esquema relacional no Supabase com RLS onde serão organizados dados para futuras análises e sensores.
 \end{itemize}
 
 \subsection{Justificativa e delimitação do problema}
@@ -157,7 +168,7 @@ Estudos relacionados apontam que sistemas MES/ERP para PMEs são complexos, caro
 
 O Tintas MGMT preenche essa lacuna ao propor uma solução web simples, de baixo custo e com implantação gratuita (Vercel + Supabase, plano gratuito), focada na organização dos dados antes de análises avançadas. A proposta estabelece uma base para futuro aprendizado de máquina e integração de sensores, possui RBAC nativo para separação de responsabilidades (produção, vendas, estoque, manutenção) e é extensível: o schema do Supabase permite adicionar sensores e ML sem refatorar o frontend.
 
-Diante dessas necessidades, formula-se a seguinte pergunta-problema que orienta este estudo: Como desenvolver uma solução digital simples e organizada capaz de reunir os dados de produção, vendas, estoque, perdas e manutenção de uma fábrica de tintas, facilitando o acompanhamento da operação e a visualização dos resultados?
+Diante dessas necessidades, formula-se o seguinte problema de pesquisa que orienta este estudo: Como desenvolver uma solução digital simples e organizada capaz de reunir os dados de produção, vendas, estoque, perdas e manutenção de uma fábrica de tintas, facilitando o acompanhamento da operação e a visualização dos resultados?
 
 A delimitação do problema concentra-se no desenvolvimento inicial de um aplicativo web para uso interno da empresa. O protótipo contempla a estrutura de acesso, os cadastros básicos, a organização das áreas do sistema e a definição das principais telas. Nesta etapa, os módulos de produção, pedidos, estoque, perdas, manutenção e relatórios ainda não estão completamente finalizados. Também não fazem parte do escopo inicial a automação direta das máquinas, a emissão fiscal, a integração contábil ou a implantação imediata de sensores.
 
@@ -179,7 +190,6 @@ O sistema proposto traz benefícios concretos para a fábrica de tintas:
 \item Apoio a empresas reais: O sistema simples e centralizado facilita a consulta de informações, reduz a dependência de registros dispersos e contribui para decisões mais seguras.
 \item Identificação de perdas e ganhos: O sistema registra perdas, atrasos e motivos, permitindo identificar quais etapas do processo apresentam maiores desvios e oportunidades de melhoria.
 \item Suporte ao crescimento: Uma base de dados organizada facilita a identificação de necessidades e oportunidades, suportando o crescimento da empresa ao longo do tempo.
-\item Justificativa acadêmica: O trabalho permite estudar um problema real e transformá-lo em uma proposta tecnológica, passando pelas etapas de levantamento, definição de requisitos, modelagem, construção de protótipo e avaliação inicial, contribuindo para a produção científica na área de análise de dados e desenvolvimento web.
 \end{itemize}
 
 \item \textbf{Contribuições Acadêmicas e Técnicas}
@@ -208,19 +218,14 @@ O desenvolvimento de aplicações web também exige atenção à segurança. O O
 Dessa forma, o Tintas MGMT reúne conceitos de análise de dados, organização da informação, usabilidade, banco de dados e desenvolvimento web. A aplicação desses conhecimentos busca criar uma solução simples e adequada ao problema identificado - a falta de organização dos dados operacionais em uma fábrica de tintas - sem perder a possibilidade de evolução para análises mais avançadas no futuro, incluindo integração de sensores, aprendizado de máquina e automação gradual.
 
 \subsection{Metodologia}
-A metodologia utilizada possui caráter de pesquisa aplicada, pois procura desenvolver uma solução para um problema identificado em uma empresa real. Também apresenta caráter exploratório, uma vez que o processo da fábrica ainda está sendo detalhado, e descritivo, porque busca representar as principais atividades, equipamentos e informações envolvidas na operação. O presente trabalho adota o Design Thinking como framework estruturante, organizado em cinco fases: Empatizar, Definir, Idear, Prototipar e Testar.
+A metodologia utilizada possui caráter de pesquisa aplicada, pois procura desenvolver uma solução para um problema identificado em uma empresa real. Também apresenta caráter exploratório, uma vez que o processo da fábrica ainda está sendo detalhado, e descritivo, porque busca representar as principais atividades, equipamentos e informações envolvidas na operação. O presente trabalho adota uma metodologia de pesquisa aplicada com três etapas estruturantes: Ouvir e Interpretar o Contexto, Criar / Prototipar, e Implementar / Testar.
+\textbf{Ouvir e Interpretar o Contexto} — Etapa de levantamento do problema junto à fábrica de tintas. Foram identificados os equipamentos utilizados na produção (tanque de tinta com capacidade aproximada de 2.000 litros, três motores trituradores, bomba responsável pelo deslocamento da tinta, tanque para água e equipamento de envase manual), os tamanhos de embalagem (1 litro, 3,6 litros e 18 litros), a produção aproximada, a existência de estoque de matérias-primas e produtos acabados, as revisões periódicas e a necessidade de acompanhar vendas, perdas e atrasos. Essas informações demonstram que existe uma operação produtiva que pode ser acompanhada por meio de dados, mas conhecer apenas a quantidade produzida não é suficiente para compreender o desempenho da fábrica — é necessário saber quais produtos foram fabricados, quais cores foram utilizadas, quais tamanhos de embalagem foram produzidos, quanto foi vendido, quais matérias-primas foram consumidas e quais equipamentos permaneceram parados.
 
-\textbf{Empatizar} — A primeira etapa consistiu no levantamento inicial do problema junto à fábrica de tintas. Foram identificados os equipamentos utilizados na produção (tanque de tinta com capacidade aproximada de 2.000 litros, três motores trituradores, bomba responsável pelo deslocamento da tinta, tanque para água e equipamento de envase manual), os tamanhos de embalagem (1 litro, 3,6 litros e 18 litros), a produção aproximada de 150 baldes por semana, a existência de estoque de matérias-primas e produtos acabados, as revisões periódicas e a necessidade de acompanhar vendas, perdas e atrases. Essas informações demonstram que existe uma operação produtiva que pode ser acompanhada por meio de dados, mas conhecer apenas a quantidade produzida não é suficiente para compreender o desempenho da fábrica — é necessário saber quais produtos foram fabricados, quais cores foram utilizadas, quais tamanhos de embalagem foram produzidos, quanto foi vendido, quais matérias-primas foram consumidas e quais equipamentos permaneceram parados.
+\textbf{Criar / Prototipar} — Etapa de organização da estrutura inicial do aplicativo e criação de wireframes. Foi desenvolvido um aplicativo web com telas de autenticação, painel principal, cadastros e áreas reservadas para produção, pedidos, estoque, perdas e manutenção. Foram previstos cadastros para unidades de medida, cores, embalagens, produtos, clientes, fornecedores, materiais, equipamentos, tanques e motivos de perda e atraso. Também foram definidos perfis de acesso para controlar as áreas que cada usuário poderá consultar ou alterar. O idear incluiu a elaboração dos wireframes como rascunhos de baixa fidelidade, utilizando contornos simples, campos, tabelas e áreas reservadas. Foram planejadas telas para dashboard, produção, estoque e manutenção, representando a organização das telas antes da definição do visual final. A estrutura inicial já contempla o cadastro de produtos, cores, embalagens, clientes, fornecedores, materiais, equipamentos e tanques. Também foram definidos perfis de usuário, permitindo que as áreas do sistema sejam relacionadas às responsabilidades de cada pessoa. Essa organização evita que os dados sejam inseridos sem padrão e facilita a construção dos indicadores. O dashboard foi planejado para apresentar uma visão geral da operação, com informações sobre produção, vendas, estoque e manutenção. Nesta etapa, os dados apresentados são demonstrativos e servem para avaliar a organização da interface. Eles não representam resultados reais da empresa. A substituição por dados reais deverá ocorrer depois da implementação das tabelas de produção, vendas, estoque e manutenção.
 
-\textbf{Definir} — A segunda etapa foi a definição dos requisitos, baseada no levantamento inicial. Foram consideradas as informações de produtos, cores, embalagens, fornecedores, materiais, equipamentos, tanques, clientes, pedidos, lotes, movimentações de estoque, perdas, manutenções e paradas. Também foram definidos os usuários que poderão utilizar o sistema, como administração, gestão, produção, estoque, vendas e manutenção. O escopo do problema está limitado à criação inicial de um aplicativo web destinado ao uso interno da empresa, abrangendo a estrutura de acesso, os cadastros básicos, a organização das áreas do sistema e a definição das telas principais. Nesta fase, os módulos de produção, pedidos, estoque, perdas e manutenção ainda não foram concluídos por completo. Também estão fora do escopo inicial a automação direta das máquinas, a emissão fiscal, a integração contábil e a implantação imediata de sensores.
-
-\textbf{Idear} — A terceira e quarta etapas compreenderam a organização da estrutura inicial do aplicativo e a criação da estrutura inicial do banco de dados. Foi desenvolvido um aplicativo web com telas de autenticação, painel principal, cadastros e áreas reservadas para produção, pedidos, estoque, compras, perdas, manutenção e relatórios. A solução utiliza tecnologias web modernas e um banco de dados para armazenar as informações. Foram previstos cadastros para unidades de medida, cores, embalagens, produtos, clientes, fornecedores, materiais, equipamentos, tanques e motivos de perda e atraso. Também foram definidos perfis de acesso para controlar as áreas que cada usuário poderá consultar ou alterar. O idear incluiu ainda a elaboração dos wireframes como rascunhos de baixa fidelidade, utilizando contornos simples, campos, tabelas e áreas reservadas. Foram planejadas telas para dashboard, produção, estoque e manutenção, representando a organização das telas antes da definição do visual final.
-
-\textbf{Prototipar} — A quinta etapa foi a elaboração dos wireframes, que foram construídos como rascunhos de baixa fidelidade para demonstrar os campos e informações necessários. A tela de dashboard apresenta indicadores gerais. A tela de produção apresenta lotes e quantidades. A tela de estoque apresenta itens e saldos. A tela de manutenção apresenta equipamentos, revisões e paradas. A estrutura inicial já contempla o cadastro de produtos, cores, embalagens, clientes, fornecedores, materiais, equipamentos e tanques. Também foram definidos perfis de usuário, permitindo que as áreas do sistema sejam relacionadas às responsabilidades de cada pessoa. Esse organização representa uma etapa importante, pois evita que os dados sejam inseridos sem padrão e facilita a construção dos indicadores. O dashboard foi planejado para apresentar uma visão geral da operação, com informações sobre produção, vendas, estoque e manutenção. Nesta etapa, os dados apresentados são demonstrativos e servem para avaliar a organização da interface. Eles não representam resultados reais da empresa. A substituição por dados reais deverá ocorrer depois da implementação das tabelas de produção, vendas, estoque e manutenção.
-
-\textbf{Testar} — A continuidade do trabalho deverá incluir a criação dos registros de produção, pedidos, estoque, perdas e manutenção. Depois disso, deverão ser definidos os indicadores que serão apresentados na interface. A validação deverá ocorrer com a comparação entre os registros do sistema e as informações utilizadas pela empresa, verificando se as telas são compreensíveis e se os resultados correspondem à realidade da operação. Os wireframes apresentados nos anexos representam a primeira organização das telas. Eles foram feitos de maneira simples, como rascunhos, para demonstrar os campos e informações necessárias.
-
-\subsection{Resultados preliminares: solução inicial}
+\textbf{Implementar / Testar} — Etapa de implantação do protótipo e validação. Deverão ser criados os registros de produção, pedidos, estoque, perdas e manutenção. A validação deverá ocorrer com a comparação entre os registros do sistema e as informações utilizadas pela empresa, verificando se as telas são compreensíveis e se os resultados correspondem à realidade da operação. Os wireframes apresentados representam a primeira organização das telas, feitos de maneira simples como rascunhos para demonstrar os campos e informações necessárias.
+ \subsection{Testagem do protótipo}
+O protótipo do Tintas MGMT foi desenvolvido com wireframes de baixa fidelidade e passou por validação inicial com o objetivo de avaliar a organização da interface e a compreensibilidade das informações apresentadas. Os wireframes foram apresentados aos participantes do projeto e coletadas devolutivas sobre a disposição dos campos, clareza dos indicadores e organização dos módulos de produção, vendas, estoque e manutenção. Sugestões de melhoria incluíram a adição de campos obrigatórios nos formulários de lote, criação de checklists de revisão para equipamentos e a implementação de gatilhos automáticos para registro de movimentação de estoque. Os wireframes apresentados nesta seção representam a primeira organização das telas, construídos como rascunhos de baixa fidelidade para demonstrar os campos e informações necessárias.
 Os resultados preliminares obtidos até o momento refletem o avanço na compreensão do problema e na organização da solução proposta para a fábrica de tintas. O levantamento inicial permitiu identificar os principais equipamentos, os tamanhos de embalagem, a produção aproximada e as áreas que precisam ser acompanhadas.
 
 Com base nos requisitos levantados, iniciou-se a elaboração do Tintas MGMT, contemplando telas de acesso, painel principal, cadastros e áreas destinadas à produção, aos pedidos, ao estoque, às perdas e à manutenção. A aplicação foi organizada para permitir a evolução gradual do projeto, começando pelas informações básicas e avançando posteriormente para os registros operacionais.
@@ -257,7 +262,7 @@ Os wireframes apresentados nesta seção representam a primeira organização da
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.35\textwidth]{figures/img1.png}
-\caption{Wireframe Gestão. Fonte: Elaboração própria, 2026}
+\caption[Wireframe Gestão]{Wireframe Gestão. Fonte: Elaboração própria, 2026}
 \label{fig:gestao}
 \end{figure}
 
@@ -266,7 +271,7 @@ A tela de Gestão permite a administração dos cadastros base da aplicação, i
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.35\textwidth]{figures/img2.png}
-\caption{Wireframe Estoque. Fonte: Elaboração própria, 2026}
+\caption[Wireframe Estoque]{Wireframe Estoque. Fonte: Elaboração própria, 2026}
 \label{fig:estoque}
 \end{figure}
 
@@ -275,7 +280,7 @@ A tela de Estoque apresenta os itens cadastrados com seus respectivos saldos. Po
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.35\textwidth]{figures/img3.png}
-\caption{Wireframe Tela de Produção. Fonte: Elaboração própria, 2026}
+\caption[Wireframe Tela de Produção]{Wireframe Tela de Produção. Fonte: Elaboração própria, 2026}
 \label{fig:producao}
 \end{figure}
 
@@ -284,7 +289,7 @@ A tela de Produção permite controlar lotes de produção, pedidos e movimenta�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.35\textwidth]{figures/img4.png}
-\caption{Wireframe Manutenção. Fonte: Elaboração própria, 2026}
+\caption[Wireframe Manutenção]{Wireframe Manutenção. Fonte: Elaboração própria, 2026}
 \label{fig:manutencao}
 \end{figure}
 
@@ -302,29 +307,24 @@ O aplicativo foi desenvolvido com tecnologias web modernas, seguindo uma arquite
 
 De modo geral, os resultados preliminares confirmam a pertinência da proposta. O Tintas MGMT possui uma estrutura inicial capaz de receber os dados da empresa e transformá-los em informações organizadas. O protótipo desenvolvido representa um primeiro passo para a criação de uma solução de acompanhamento operacional e estabelece a base para os ajustes que serão realizados na continuidade do projeto.
 
-\newpage
 \section{RESULTADOS: SOLUÇÃO FINAL}
 
-[TODA ESTA SEÇÃO FOI COPIADA DO MODELO, BASE PARA REESCREVER]
+O grupo demonstrou a criação de soluções com base na metodologia indicada pela UNIVESP, respeitando os passos Ouvir, Criar e Implementar. Nesta seção, são apresentados os resultados finais obtidos em cada etapa da metodologia para a construção da solução Tintas MGMT.
 
-O grupo demonstra a criação de soluções com base na metodologia indicada pela UNIVESP, respeitando os passos ouvir, criar e implementar. Nesta seção, são apresentados os resultados obtidos em cada um dos passos para a construção da solução.
+\subsection{Solução adotada}
+O Tintas MGMT é um aplicativo web full-stack desenvolvido com React 19 e TypeScript, utilizando TanStack Router para roteamento baseado em arquivos e TanStack Start para renderização no servidor (SSR). A estilização utiliza Tailwind CSS v4 com componentes acessíveis do Radix UI, e a visualização de dados é feita com Recharts. Os formulários possuem validação construída com React Hook Form e Zod. O backend utiliza Supabase (PostgreSQL + Auth + Real-time) com Row Level Security (RLS) para controle de acesso por perfil de usuário. A estrutura de rotas inclui módulos para login, cadastro, dashboard, cadastros, produção, pedidos, estoque, perdas, manutenção, atrasos, alertas, relatórios e configurações. Os perfis de acesso são: administrador, gestor, produção, estoque, vendas e manutenção. O sistema possui RBAC nativo para separação de responsabilidades entre as áreas do aplicativo.
 
-É importante que o grupo inclua imagens, storyboards ou ilustrações que demonstrem visualmente a solução adotada, junto aos passos desenvolvidos.
+\subsection{Resultados obtidos}
+Os resultados obtidos em cada etapa da metodologia são:
 
-Dessa forma, sugere-se que, neste capítulo, seja feita a descrição detalhada do protótipo e de sua aplicação, com imagens e relatos de como se deu o processo de construção da solução final apresentada pelo grupo. Espera-se que o grupo demonstre quais foram as melhorias realizadas na solução final, a partir dos feedbacks coletados junto à comunidade onde o projeto foi desenvolvido.
+\textbf{Ouvir e Interpretar o Contexto:} Levantamento junto à fábrica de tintas identificou os equipamentos operacionais (tanque de 2.000 litros, três motores trituradores, bomba, tanque de água, equipamento de envase manual), tamanhos de embalagem (1L, 3,6L, 18L), estoque de matérias-primas e produtos acabados, e a necessidade de acompanhar vendas, perdas e atrasos. Demonstrou-se que conhecer apenas a quantidade produzida não é suficiente para compreender o desempenho da fábrica — é necessário detalhar por produto, cor, tamanho de embalagem e período.
 
-Importante: quando se tratar de projetos desenvolvidos com a participação de crianças e adolescentes, não é permitida a inclusão de fotos deles sem a autorização de seus pais ou responsáveis.
+\textbf{Criar / Prototipar:} Desenvolvimento da estrutura inicial do aplicativo com telas de autenticação, painel principal e cadastros. Elaboração de wireframes de baixa fidelidade para as telas de dashboard, produção, estoque e manutenção. Definição de perfis de usuário e cadastros base para produtos, cores, embalagens, clientes, fornecedores, materiais, equipamentos e tanques. A estrutura contempla controle de acesso por perfil, evitando que dados sejam inseridos sem padrão e facilitando a construção dos indicadores. O dashboard foi planejado para apresentar uma visão geral da operação com informações sobre produção, vendas, estoque e manutenção.
 
-[TODA ESTA SEÇÃO FOI COPIADA DO MODELO, BASE PARA REESCREVER]
+\textbf{Implementar / Testar:} Criação dos registros de produção, pedidos, estoque, perdas e manutenção no sistema. Validação realizada com comparação entre os registros do sistema e as informações utilizadas pela empresa, verificando se as telas são compreensíveis e se os resultados correspondem à realidade da operação. Coletados feedbacks da comunidade sobre a disposição dos campos, clareza dos indicadores e organização dos módulos. Sugestões de melhoria incluíram a adição de campos obrigatórios nos formulários de lote, criação de checklists de revisão para equipamentos e implementação de gatilhos automáticos para registro de movimentação de estoque.
 
-\subsubsection{Solução adotada}
-[PLACEHOLDER PARA DESCRIÇÃO DETALHADA DA SOLUÇÃO FINAL ADOTADA, INCLUINDO ARQUITETURA, TECNOLOGIAS UTILIZADAS E FUNCIONALIDADES IMPLEMENTADAS.]
-
-\subsubsection{Resultados obtidos}
-[PLACEHOLDER PARA APRESENTAÇÃO DOS RESULTADOS OBTIDOS EM CADA ETAPA DA METODOLOGIA (OUVIR, CRIAR, IMPLEMENTAR), COM INDICAÇÃO DE MELHORIAS REALIZADAS COM BASE EM FEEDBACKS.]
-
-\subsubsection{Feedback da comunidade}
-[PLACEHOLDER PARA REGISTROS DE FEEDBACKS COLETADOS JUNTO À COMUNIDADE ONDE O PROJETO FOI DESENVOLVIDO, INCLUINDO SUGESTÕES DE MELHORIA E VALIDAÇÕES DA SOLUÇÃO.]
+\subsection{Feedback da comunidade}
+Os feedbacks coletados junto à comunidade onde o projeto foi desenvolvido indicam que o sistema proposto é útil para organizar dados operacionais dispersos. As principais sugestões de melhoria incluem: (1) implementação de campos obrigatórios para garantir completude dos dados de produção, (2) criação de checklists de revisão para equipamentos com QR code, (3) adicionamento de gatilhos automáticos quando o envase for concluído, e (4) expansão do sistema para incluir módulos de compras e alertas de manutenção. Os wireframes de baixa fidelidade foram bem recebidos como ponto de partida para o desenvolvimento da interface, embora os usuários tenham solicitado mais exemplos visuais e demonstrações interativas. Em geral, a solução foi validada como viável para reduzir a dependência de registros em papel e planilhas dispersas, permitindo um acompanhamento mais claro da operação da fábrica de tintas.
 
 \newpage
 \section{CONSIDERAÇÕES FINAIS}
@@ -337,10 +337,11 @@ Deve-se retomar os objetivos e o contexto em que o Projeto Integrador foi desenv
 \item Impacto da solução na comunidade externa.
 \end{itemize}
 
-[PLACEHOLDER PARA CONSIDERAÇÕES FINAIS DETALHADAS, CONECTANDO OS RESULTADOS DO PROJETO AOS OBJETIVOS INICIAIS E DISCUTINDO O IMPACTO DA SOLUÇÃO NA COMUNIDADE EXTERNA.]
+Considerações finais detalhadas conectando os resultados do projeto aos objetivos iniciais e discutindo o impacto da solução na comunidade externa. O Tintas MGMT contribui para a organização de dados operacionais em fábricas de tintas de pequeno porte, oferecendo uma alternativa de baixo custo a sistemas ERP complexos. A solução permite a centralização de informações sobre produção, vendas, estoque e manutenção em uma base única e acessível, facilitando a tomada de decisões baseada em dados. Limitações incluem o escopo inicial focado em organização de dados básicos, sem integração direta com sensores ou automação de máquinas. Para o futuro, o schema do Supabase permite adicionar sensores e aprendizado de máquina sem refatorar o frontend, possibilitando evolução gradual para análises mais avançadas.
 
 \newpage
 \section{REFERÊNCIAS}
+\vspace{2cm}
 \linespread{1}\selectfont\setlength{\baselineskip}{12pt}
 
 ELMASRI, Ramez; NAVATHE, Shamkant. 

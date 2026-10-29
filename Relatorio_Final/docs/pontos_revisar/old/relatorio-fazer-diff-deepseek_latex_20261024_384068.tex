@@ -1,0 +1,391 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{left=3cm,right=2cm,top=3cm,bottom=2cm}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{mathptmx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\fancyhf{}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{needspace}
+\begin{document}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\widowpenalty=10000
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\sloppy
+
+
+% ============ CAPA ============
+\begin{titlepage}
+\centering
+% \vspace*{1cm}
+{\large\bfseries UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO\par}
+\vspace{2cm}
+{\normalsize Jessica Fabiane Costa de Medeiros\par}
+{\normalsize Luiz Henrique Ferreira Silva\par}
+{\normalsize Mikael Silva\par}
+{\normalsize Rafael Massao Okumura\par}
+{\normalsize Thainá Alzira Carvalho Vieira Batista\par}
+{\normalsize Willian Pires da Silva\par}
+\vspace{2.5cm}
+{\large\bfseries Tintas MGMT: Sistema de Organização e\par}
+\vspace{0.3cm}
+{\large\bfseries Análise de Dados Empresarial\par}
+\vspace{3cm}
+\fbox{\parbox{\textwidth}{
+\centering
+\textbf{Vídeo de apresentação do Projeto Integrador}\\[0.3cm]
+<link>
+}}
+\vfill
+{\large Araçariguama, Iperó, Itapetininga, Salto - SP\par}
+{\large 2026\par}
+
+\end{titlepage}
+\pagestyle{empty}
+
+% ============ FOLHA DE ROSTO ============
+\pagebreak
+\thispagestyle{empty}
+\begin{center}
+% \centering
+% \vspace*{1cm}
+{\large\bfseries UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO\par}
+\vspace{2cm}
+\vspace{2.5cm}
+{\large\bfseries Tintas MGMT: Sistema de Organização e\par}
+\vspace{0.3cm}
+{\large\bfseries Análise de Dados Empresarial\par}
+\vspace{3cm}
+{\linespread{1}\selectfont\leftskip=7cm   Relatório Técnico-Científico apresentado na disciplina de Projeto Integrador para o curso de Bacharelado em Tecnologia da Informação, Ciência de Dados e Engenharia de Computação da Universidade Virtual do Estado de São Paulo (UNIVESP).\par}
+% \\[1.2cm]
+\vfill
+{\large Araçariguama, Iperó, Itapetininga, Salto - SP\par}
+{\large 2026\par}
+\end{center}
+
+% ============ RESUMO ============
+\clearpage
+\thispagestyle{empty}
+
+{\centering
+Jessica Fabiane Costa de Medeiros; Luiz Henrique Ferreira Silva; Mikael Silva; Rafael Massao Okumura; Thainá Alzira Carvalho Vieira Batista; Willian Pires da Silva\\[0.3cm]
+Tintas MGMT: Sistema de Organização e Análise de Dados Empresarial\\[0.3cm]
+Relatório Técnico-Científico\\[0.3cm]
+Curso de Bacharelado em Tecnologia da Informação, Ciência de Dados e Engenharia de Computação\\[0.3cm]
+Tutora: Kelly de Santana Santana\\[0.3cm]
+2026\par}
+\vspace{1cm}
+
+\section*{Resumo}
+
+{\linespread{1}\selectfont\setlength{\baselineskip}{12pt}
+A operação de uma fábrica de tintas envolve compra de matérias-primas, produção, envase, armazenamento, venda e manutenção de equipamentos. Quando essas informações não são registradas de forma organizada, torna-se difícil acompanhar a quantidade produzida, o volume vendido, os tamanhos de embalagem mais procurados, as cores de maior saída, os níveis de estoque, as perdas e as paradas de máquinas. Essa dificuldade prejudica o planejamento da produção e a tomada de decisões da empresa. Com base no levantamento inicial realizado junto a uma fábrica de tintas, este trabalho propõe o desenvolvimento do Tintas MGMT, um aplicativo web destinado à organização dos dados operacionais da empresa e à visualização dos resultados. A solução reúne informações sobre produção, vendas, estoque, perdas, atrasos e manutenção em uma estrutura única e de fácil consulta. O código-fonte está disponível em: https://github.com/RafaelMassao/TintasMGMT. O projeto está relacionado ao desenvolvimento de análise de dados e à preparação de uma interface para apresentação das informações. O desenvolvimento inicial contempla a definição do problema, o levantamento de requisitos, a criação da estrutura do aplicativo, o cadastro das informações básicas e a elaboração de wireframes das principais telas. A continuidade do projeto deverá permitir a substituição de registros dispersos por dados organizados, possibilitando análises mais precisas e melhorias no acompanhamento da operação.
+\par}
+
+\vspace{2cm}
+
+\textbf{Palavras-chave:} Aplicativo web; análise de dados; fábrica de tintas; produção; estoque; manutenção; visualização de informações.
+
+% ============ LISTA DE FIGURAS ============
+\clearpage
+\listoffigures
+
+% ============ SUMÁRIO ============
+\clearpage
+\tableofcontents
+
+% ============ CORPO ============
+\clearpage
+\pagestyle{fancy}
+\section{INTRODUÇÃO}
+\enlargethispage{-4\baselineskip}
+A escolha deste tema surgiu a partir do contato com uma empresa do segmento de fabricação de tintas e do levantamento inicial de suas atividades. A empresa trabalha com a fabricação e o envase de tintas em diferentes tamanhos de embalagem, realiza compras de fornecedores, mantém estoque de matérias-primas e produtos acabados e realiza revisões periódicas em seus equipamentos. Também possui máquinas de pintura destinadas à locação.
+
+Durante as conversas iniciais, foram identificados alguns dos principais elementos da operação: um tanque de tinta com capacidade aproximada de 2.000 litros, três motores trituradores, uma bomba responsável pelo deslocamento da tinta, um tanque para água e um equipamento de envase manual. A empresa trabalha com embalagens de 1 litro, 3,6 litros e 18 litros e informou uma produção média aproximada de 150 baldes por semana.
+
+Essas informações mostram que existe uma operação produtiva que pode ser acompanhada por meio de dados. Entretanto, conhecer apenas a quantidade aproximada produzida não é suficiente para compreender o desempenho da fábrica. É necessário saber quais produtos foram fabricados, quais cores foram utilizadas, quais tamanhos de embalagem foram produzidos, quanto foi vendido, quais matérias-primas foram consumidas e quais equipamentos permaneceram parados.
+
+A ausência de registros organizados pode dificultar o planejamento e fazer com que decisões importantes sejam tomadas com base apenas na memória ou em anotações separadas. Também pode dificultar a identificação de perdas e atrasos. Uma parada em um motor, uma falha na bomba ou uma revisão não realizada podem interferir na produção e no cumprimento dos prazos de entrega.
+
+Nesse contexto, o presente trabalho concentra-se na concepção e no desenvolvimento inicial do Tintas MGMT, um aplicativo web voltado à organização dos dados de uma fábrica de tintas. A proposta é reunir informações relevantes da operação e apresentar os resultados de forma simples, permitindo que a empresa acompanhe sua produção, vendas, estoque e manutenção com maior clareza.
+O projeto também se relaciona ao tema de desenvolvimento de análise de dados em escala utilizando conjuntos de dados existentes ou capturados por dispositivos e aprendizagem de máquina, preparando uma interface para visualização dos resultados. Nesta etapa, o foco está na organização da base de informações e na definição da interface. A utilização de dados históricos, sensores e modelos de análise deverá ocorrer conforme a aplicação evolua e conforme a empresa disponha de registros suficientes.
+
+\newpage
+\section{DESENVOLVIMENTO}
+
+\subsection{Objetivos}
+\subsubsection*{Objetivo geral}
+Desenvolver um aplicativo web capaz de organizar dados de produção, vendas, estoque, perdas, atrasos e manutenção de uma fábrica de tintas, permitindo visualizar as principais informações da operação e apoiando o planejamento da empresa.
+
+\subsubsection*{Objetivos específicos}
+\begin{itemize}
+\item \textbf{Cadastros base —} Registrar produtos, cores, embalagens, matérias-primas, fornecedores, equipamentos, tanques e clientes em catálogos organizados.
+\item \textbf{Produção e vendas —} Controlar lotes de produção, pedidos, movimentações de estoque e rastrear a entrada de produtos acabados.
+\item \textbf{Perdas e atrasos —} Registrar perdas de produção, motivos e paradas de máquinas com data, causa e responsável.
+\item \textbf{Manutenção —} Organizar revisões periódicas, equipamentos com QR code e controle de paradas (preventiva e corretiva).
+\item \textbf{Interface e indicadores —} Criar dashboard com indicadores de produção, vendas, estoque e manutenção para apoio à decisão.
+\item \textbf{Base de dados —} Preparar esquema relacional no Supabase com RLS, perfis de acesso e extensível para futuras análises e sensores.
+\end{itemize}
+
+\subsection{Justificativa e delimitação do problema}
+A fabricação de tintas depende da disponibilidade de materiais, equipamentos, mão de obra, embalagens e espaço para armazenamento. Uma falha em qualquer uma dessas etapas pode interferir na produção. Além disso, os produtos podem possuir diferentes cores, volumes e destinos, o que aumenta a necessidade de organizar os registros.
+
+A informação de que a empresa produz aproximadamente 150 baldes por semana representa apenas uma visão geral. Para apoiar decisões, é necessário detalhar essa produção. Deve-se identificar quantos baldes correspondem às embalagens de 1 litro, 3,6 litros e 18 litros, quais cores são mais requisitadas, quais produtos permanecem em estoque e quais itens precisam ser repostos.
+
+A mesma necessidade existe em relação às vendas. Saber o total vendido é importante, mas também é necessário observar o comportamento da demanda. Uma determinada embalagem pode possuir maior saída em um período, enquanto uma cor pode ser mais procurada em determinada época. A organização desses dados pode ajudar a empresa a planejar melhor suas compras e sua produção.
+
+A manutenção também precisa ser considerada. A empresa realiza revisões periódicas, e os equipamentos possuem relação direta com a continuidade da produção. Registrar a data de uma revisão, o equipamento envolvido, o tipo de manutenção e o tempo de parada pode ajudar a compreender a origem de atrasos e perdas.
+
+A justificativa social e econômica deste projeto está relacionada à possibilidade de apoiar uma empresa real na organização de suas atividades. Um sistema simples e centralizado pode facilitar a consulta de informações, reduzir a dependência de registros dispersos e contribuir para decisões mais seguras. A solução também pode apoiar o crescimento da empresa, pois uma base organizada facilita a identificação de necessidades e oportunidades.
+
+A justificativa cultural está relacionada à preservação do conhecimento operacional acumulado nas fábricas de tintas da região de Araçariguama, Iperó, Itapetininga e Salto (SP). Essas fábricas de pequeno e médio porte operam historicamente com registros em papel, planilhas dispersas e controles de memória, sem integração entre produção, vendas, estoque e manutenção. A ausência de ferramentas simples e acessíveis de organização de dados representa um risco à preservação desse saber, que se perde com a rotatividade de pessoal e a aposentadoria de operadores experientes. O Tintas MGMT contribui para a sistematização desse conhecimento acumulado, centralizando dados em um único repositório digital acessível a todos os perfis de usuário. Além disso, apoia o desenvolvimento socioeconômico da região ao permitir que pequenas fábricas de tintas ganhem em rastreabilidade, redução de perdas e tomada de decisão baseada em dados, sem a necessidade de investir em sistemas ERP complexos e de alto custo.
+
+A justificativa acadêmica deste trabalho está relacionada à aplicação de conhecimentos de desenvolvimento web, banco de dados, organização da informação, análise de dados e visualização. O trabalho permite estudar um problema real e transformá-lo em uma proposta tecnológica, passando pelas etapas de levantamento, definição de requisitos, modelagem, construção de protótipo e avaliação inicial.
+
+Estudos relacionados apontam que sistemas MES/ERP para PMEs são complexos, caros e representam um exagero para fábricas de pequeno porte. A Manufatura 4.0 foca em grandes indústrias com sensores IoT, sem abordar a organização básica de dados. Já a análise de dados em PMEs apresenta uma lacuna entre "ter dados" e "usar dados", em decorrência da falta de ferramenta acessível.
+
+O Tintas MGMT preenche essa lacuna ao propor uma solução web simples, de baixo custo e com implantação gratuita (Vercel + Supabase, plano gratuito), focada na organização dos dados antes de análises avançadas. A proposta estabelece uma base para futuro aprendizado de máquina e integração de sensores, possui RBAC nativo para separação de responsabilidades (produção, vendas, estoque, manutenção) e é extensível: o schema do Supabase permite adicionar sensores e ML sem refatorar o frontend.
+
+Diante dessas necessidades, formula-se a seguinte pergunta-problema que orienta este estudo: Como desenvolver uma solução digital simples e organizada capaz de reunir os dados de produção, vendas, estoque, perdas e manutenção de uma fábrica de tintas, facilitando o acompanhamento da operação e a visualização dos resultados?
+
+A delimitação do problema concentra-se no desenvolvimento inicial de um aplicativo web para uso interno da empresa. O protótipo contempla a estrutura de acesso, os cadastros básicos, a organização das áreas do sistema e a definição das principais telas. Nesta etapa, os módulos de produção, pedidos, estoque, perdas, manutenção e relatórios ainda não estão completamente finalizados. Também não fazem parte do escopo inicial a automação direta das máquinas, a emissão fiscal, a integração contábil ou a implantação imediata de sensores.
+
+\subsection{Contribuições para o Público Externo}
+As contribuições do projeto Tintas MGMT estendem-se além da empresa beneficiária, impactando a comunidade e o ambiente acadêmico:
+
+\begin{enumerate}
+\item \textbf{Contribuições para a Empresa Beneficiária}
+O sistema proposto traz benefícios concretos para a fábrica de tintas:
+
+\begin{itemize}
+\item Centralização de dados: Substitui cadernos, planilhas e anotações dispersas por uma base única e organizada, garantindo que todas as informações estejam em um único local de fácil consulta.
+\item Rastreabilidade completa: É possível acompanhar a produção desde o recebimento das matérias-primas até a entrega dos produtos acabados, incluindo lotes, cores, embalagens e quantidades.
+\item Tomada de decisão mais segura: Com dados organizados e indicadores claros, a gestão pode tomar decisões mais embasadas sobre compras, produção e manutenção, reduzindo a dependência da memória ou de anotações isoladas.
+\end{itemize}
+
+\item \textbf{Contribuições Socioeconômicas}
+\begin{itemize}
+\item Apoio a empresas reais: O sistema simples e centralizado facilita a consulta de informações, reduz a dependência de registros dispersos e contribui para decisões mais seguras.
+\item Identificação de perdas e ganhos: O sistema registra perdas, atrasos e motivos, permitindo identificar quais etapas do processo apresentam maiores desvios e oportunidades de melhoria.
+\item Suporte ao crescimento: Uma base de dados organizada facilita a identificação de necessidades e oportunidades, suportando o crescimento da empresa ao longo do tempo.
+\end{itemize}
+
+\item \textbf{Contribuições Acadêmicas e Técnicas}
+\begin{itemize}
+\item Aplicação de conhecimentos: O trabalho aplica conhecimentos de desenvolvimento web, banco de dados, organização da informação, análise de dados e visualização para criar uma solução tecnológica a partir de um problema real.
+\item Desenvolvimento sustentável: A proposta foca em criar uma solução simples e adequada ao problema identificado, sem perder a possibilidade de evolução para análises mais avançadas no futuro (sensores, aprendizado de máquina, automação).
+\item Controle de acesso por perfil: cada área do sistema (produção, vendas, estoque, manutenção) acessa apenas as informações relevantes para suas funções, com base no Row Level Security configurado no Supabase.
+\end{itemize}
+\end{enumerate}
+
+\subsection{Fundamentação teórica}
+A análise de dados tem sido utilizada pelas organizações para transformar registros do cotidiano em informações que apoiem decisões. No caso da fábrica de tintas analisada, esses registros envolvem os lotes produzidos no tanque de 2.000 litros, a moagem nos três motores trituradores, o envase manual nas embalagens de 1 litro, 3,6 litros e 18 litros e a movimentação de estoque de matérias-primas e produtos acabados. Quando essas informações são organizadas, torna-se possível comparar períodos, identificar as cores e as embalagens de maior saída e observar situações que exigem atenção, como paradas de máquina e perdas de produção. Essa organização é dificultada quando os dados ficam dispersos em cadernos, planilhas isoladas e memórias individuais, situação identificada no levantamento inicial junto à empresa. A estruturação do processo analítico segue, de forma adaptada, a lógica do CRISP-DM (IBM, 2026), com foco nas etapas de entendimento do problema e preparação dos dados antes de qualquer análise estatística mais elaborada.
+
+A análise também se aplica ao acompanhamento da manutenção. Equipamentos como os motores trituradores, a bomba de deslocamento da tinta e o equipamento de envase manual influenciam diretamente a produção, e uma parada não planejada pode atrasar lotes inteiros. Ao registrar revisões periódicas, falhas e períodos de indisponibilidade, a empresa pode compreender melhor o comportamento de suas máquinas e planejar as atividades de forma preventiva. A manutenção preditiva, baseada no histórico de registros, permite identificar padrões de falha antes que se convertam em paradas, reduzindo o risco de perda de produção.
+
+O conceito de Indústria 4.0 está associado à utilização de tecnologias digitais para ampliar a integração e o acompanhamento dos processos industriais. Em uma fábrica de tintas de pequeno porte, esse conceito pode ser aplicado de forma gradual: primeiro com registros estruturados dos lotes, das cores e das embalagens; depois, com dispositivos que auxiliem o preenchimento automático das informações. Sensores de temperatura e vibração nos motores trituradores, medidores de corrente elétrica na bomba ou contadores de tempo de funcionamento no equipamento de envase poderiam, em uma etapa futura, complementar os registros manuais, permitindo monitoramento em tempo real e manutenção preditiva. Nesta etapa inicial, no entanto, o foco está na organização básica dos dados, sem integração de sensores avançados.
+
+A aprendizagem de máquina pode ser aplicada a projetos de análise industrial desde que exista quantidade adequada de dados históricos. Em uma fábrica de tintas, com registros organizados, seria possível investigar a previsão de demanda por cor e por embalagem, a identificação de padrões de consumo fora do comum e a avaliação do risco de paradas nos motores trituradores e na bomba. No entanto, a construção de modelos preditivos não deve anteceder a estruturação e a verificação da qualidade dos registros. Esse é justamente o passo inicial que o Tintas MGMT se propõe a facilitar: a aplicação de ML deve ocorrer de forma graduada, começando pela organização da base e evoluindo para análises preditivas à medida que a empresa acumula dados suficientes.
+
+A interface de visualização é importante porque permite apresentar as informações de maneira acessível a perfis com diferentes níveis de familiaridade com ferramentas digitais. Indicadores, tabelas e gráficos podem auxiliar a gestão a compreender o desempenho da produção sem precisar consultar diretamente os registros técnicos. Norman (2013) afirma que os produtos devem ser desenvolvidos considerando as necessidades e limitações das pessoas que irão utilizá-los, e Nielsen (1994) destaca a importância da simplicidade, da clareza e da facilidade de aprendizagem nos sistemas interativos. Esses princípios orientam o desenho das telas do Tintas MGMT, de modo que operadores da produção, do estoque e da manutenção, além da gestão, encontrem as informações relevantes para suas funções sem precisar navegar por áreas que não lhes dizem respeito.
+
+A modelagem de dados representa outra parte fundamental da solução. De acordo com Elmasri e Navathe (2019), bancos relacionais contribuem para a organização, a consistência e a integridade das informações. No projeto, entidades como produtos, cores, embalagens, matérias-primas, equipamentos e fornecedores precisam manter relações organizadas entre si, evitando repetição e facilitando a consulta. Um lote de tinta, por exemplo, deve referenciar a cor utilizada, a embalagem de destino e o tanque em que foi produzido, sem duplicar esses dados em cada registro. Esse modelo relacional estabelece a base para futuras análises e para a eventual integração de sensores, permitindo adicionar novos elementos ao schema sem refatorar o frontend, conforme a proposta de extensibilidade do projeto.
+
+O desenvolvimento de aplicações web também exige atenção à segurança. O OWASP Top 10 (OWASP, 2021) destaca riscos relacionados à autenticação, ao controle de acesso e à exposição inadequada de informações. Por esse motivo, o aplicativo foi planejado com autenticação por usuário e perfis de utilização que restringem o acesso às áreas internas do sistema, de modo que cada perfil — administração, gestão, produção, estoque, vendas e manutenção — acesse apenas as informações relevantes para suas funções.
+
+Dessa forma, o Tintas MGMT integra conceitos de análise de dados, modelagem relacional, usabilidade e desenvolvimento web para responder a um problema concreto: a ausência de registros organizados sobre produção, vendas, estoque e manutenção em uma fábrica de tintas de pequeno porte. A solução proposta busca ser simples o suficiente para adoção imediata pela empresa e, ao mesmo tempo, estruturada de modo a permitir evolução gradual para análises mais avançadas, com integração de sensores e aprendizado de máquina em etapas futuras.
+
+\subsection{Metodologia}
+A metodologia utilizada possui caráter de pesquisa aplicada, pois procura desenvolver uma solução para um problema identificado em uma empresa real. Também apresenta caráter exploratório, uma vez que o processo da fábrica ainda está sendo detalhado, e descritivo, porque busca representar as principais atividades, equipamentos e informações envolvidas na operação. O presente trabalho adota o Design Thinking como framework estruturante, organizado em cinco fases: Empatizar, Definir, Idear, Prototipar e Testar.
+
+\textbf{Empatizar} — A primeira etapa consistiu no levantamento inicial do problema junto à fábrica de tintas. Foram identificados os equipamentos utilizados na produção (tanque de tinta com capacidade aproximada de 2.000 litros, três motores trituradores, bomba responsável pelo deslocamento da tinta, tanque para água e equipamento de envase manual), os tamanhos de embalagem (1 litro, 3,6 litros e 18 litros), a produção aproximada de 150 baldes por semana, a existência de estoque de matérias-primas e produtos acabados, as revisões periódicas e a necessidade de acompanhar vendas, perdas e atrasos. Essas informações demonstram que existe uma operação produtiva que pode ser acompanhada por meio de dados, mas conhecer apenas a quantidade produzida não é suficiente para compreender o desempenho da fábrica — é necessário saber quais produtos foram fabricados, quais cores foram utilizadas, quais tamanhos de embalagem foram produzidos, quanto foi vendido, quais matérias-primas foram consumidas e quais equipamentos permaneceram parados.
+
+\textbf{Definir} — A segunda etapa foi a definição dos requisitos, baseada no levantamento inicial. Foram consideradas as informações de produtos, cores, embalagens, fornecedores, materiais, equipamentos, tanques, clientes, pedidos, lotes, movimentações de estoque, perdas, manutenções e paradas. Também foram definidos os usuários que poderão utilizar o sistema, como administração, gestão, produção, estoque, vendas e manutenção. O escopo do problema está limitado à criação inicial de um aplicativo web destinado ao uso interno da empresa, abrangendo a estrutura de acesso, os cadastros básicos, a organização das áreas do sistema e a definição das telas principais. Nesta fase, os módulos de produção, pedidos, estoque, perdas e manutenção ainda não foram concluídos por completo. Também estão fora do escopo inicial a automação direta das máquinas, a emissão fiscal, a integração contábil e a implantação imediata de sensores.
+
+\textbf{Idear} — A terceira etapa compreendeu a organização da estrutura inicial do aplicativo e a criação da estrutura inicial do banco de dados. Foi desenvolvido um aplicativo web com telas de autenticação, painel principal, cadastros e áreas reservadas para produção, pedidos, estoque, compras, perdas, manutenção e relatórios. A solução utiliza tecnologias web modernas e um banco de dados para armazenar as informações. Foram previstos cadastros para unidades de medida, cores, embalagens, produtos, clientes, fornecedores, materiais, equipamentos, tanques e motivos de perda e atraso. Também foram definidos perfis de acesso para controlar as áreas que cada usuário poderá consultar ou alterar.
+
+\textbf{Prototipar} — A quarta etapa foi a elaboração dos wireframes, que foram construídos como rascunhos de baixa fidelidade para demonstrar os campos e informações necessários. A tela de dashboard apresenta indicadores gerais. A tela de produção apresenta lotes e quantidades. A tela de estoque apresenta itens e saldos. A tela de manutenção apresenta equipamentos, revisões e paradas. A estrutura inicial já contempla o cadastro de produtos, cores, embalagens, clientes, fornecedores, materiais, equipamentos e tanques. Também foram definidos perfis de usuário, permitindo que as áreas do sistema sejam relacionadas às responsabilidades de cada pessoa. Essa organização representa uma etapa importante, pois evita que os dados sejam inseridos sem padrão e facilita a construção dos indicadores. O dashboard foi planejado para apresentar uma visão geral da operação, com informações sobre produção, vendas, estoque e manutenção. Nesta etapa, os dados apresentados são demonstrativos e servem para avaliar a organização da interface. Eles não representam resultados reais da empresa. A substituição por dados reais deverá ocorrer depois da implementação das tabelas de produção, vendas, estoque e manutenção.
+
+\textbf{Testar} — A continuidade do trabalho deverá incluir a criação dos registros de produção, pedidos, estoque, perdas e manutenção. Depois disso, deverão ser definidos os indicadores que serão apresentados na interface. A validação deverá ocorrer com a comparação entre os registros do sistema e as informações utilizadas pela empresa, verificando se as telas são compreensíveis e se os resultados correspondem à realidade da operação. Os wireframes apresentados nos anexos representam a primeira organização das telas. Eles foram feitos de maneira simples, como rascunhos, para demonstrar os campos e informações necessárias.
+
+\subsection{Resultados preliminares: solução inicial}
+Os resultados preliminares obtidos até o momento refletem o avanço na compreensão do problema e na organização da solução proposta para a fábrica de tintas. O levantamento inicial permitiu identificar os principais equipamentos, os tamanhos de embalagem, a produção aproximada e as áreas que precisam ser acompanhadas.
+
+Com base nos requisitos levantados, iniciou-se a elaboração do Tintas MGMT, contemplando telas de acesso, painel principal, cadastros e áreas destinadas à produção, aos pedidos, ao estoque, às perdas e à manutenção. A aplicação foi organizada para permitir a evolução gradual do projeto, começando pelas informações básicas e avançando posteriormente para os registros operacionais.
+
+A estrutura inicial já contempla o cadastro de produtos, cores, embalagens, clientes, fornecedores, materiais, equipamentos e tanques. Também foram definidos perfis de usuário, permitindo que as áreas do sistema sejam relacionadas às responsabilidades de cada pessoa. Essa organização representa uma etapa importante, pois evita que os dados sejam inseridos sem padrão e facilita a construção dos indicadores.
+
+O dashboard foi planejado para apresentar uma visão geral da operação, com informações sobre produção, vendas, estoque e manutenção. Nesta etapa, os dados apresentados são demonstrativos e servem para avaliar a organização da interface. Eles não representam resultados reais da empresa. A substituição por dados reais deverá ocorrer depois da implementação das tabelas de produção, vendas, estoque e manutenção.
+
+As principais dificuldades encontradas na transformação da operação em informações registradas pelo sistema podem ser mitigadas pelas seguintes estratégias:
+
+\begin{table}[h]
+\centering
+\caption{Estratégias de mitigação das principais dificuldades}
+\begin{tabular}{p{0.45\textwidth}p{0.45\textwidth}}
+\hline
+\textbf{Dificuldade} & \textbf{Estratégia de Mitigação} \\
+\hline
+Produção "150 baldes/semana" sem detalhe por embalagem, cor, produto e período & Formulário de lote com campos obrigatórios: produto, cor, embalagem, quantidade planejada e realizada, tanque, datas \\
+\hline
+Incerteza sobre quando o produto acabado entra no estoque & Gatilho ao finalizar envase (\texttt{envase.status = concluido}) $\rightarrow$ registro em \texttt{movimentacao\_estoque} tipo entrada + atualiza \texttt{saldos\_estoque} \\
+\hline
+Registro de perdas e consumo & Tela dedicada `/perdas` com tipos: processo, quebra embalagem, vencimento, contaminação, outro; campo `valor\_estimado` \\
+\hline
+Acompanhamento impreciso de máquinas e paradas & Cadastro de equipamentos com QR code; checklist de revisão; parada: equipamento, causa, início/fim, lote/pedido relacionado \\
+\hline
+Dados dispersos em papel e memória individual & Base única Supabase com RLS; cada perfil acessa apenas seu módulo; dashboard unifica indicadores \\
+\hline
+\end{tabular}
+\label{tab:mitigacao}
+\end{table}
+
+Os wireframes apresentados nesta seção representam a primeira organização das telas. Foram construídos como rascunhos de baixa fidelidade para demonstrar os campos e informações necessários.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.35\textwidth]{figures/img1.png}
+\caption{Wireframe Gestão. Fonte: Elaboração própria, 2026}
+\label{fig:gestao}
+\end{figure}
+
+A tela de Gestão permite a administração dos cadastros base da aplicação, incluindo produtos, cores, embalagens, matérias-primas, fornecedores, equipamentos, tanques e clientes. Cada cadastro possui campos para identificação, descrição e status, permitindo que o usuário organize as informações básicas antes de iniciar os registros operacionais.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.35\textwidth]{figures/img2.png}
+\caption{Wireframe Estoque. Fonte: Elaboração própria, 2026}
+\label{fig:estoque}
+\end{figure}
+
+A tela de Estoque apresenta os itens cadastrados com seus respectivos saldos. Possui funcionalidades para visualizar itens abaixo do estoque mínimo, registrar movimentações de entrada e saída, e acompanhar o rastreamento de lotes desde a produção até a entrega.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.35\textwidth]{figures/img3.png}
+\caption{Wireframe Tela de Produção. Fonte: Elaboração própria, 2026}
+\label{fig:producao}
+\end{figure}
+
+A tela de Produção permite controlar lotes de produção, pedidos e movimentações de estoque. Possui campos para registrar o produto, cor, embalagem, quantidade planejada e realizada, tanque utilizado e datas de início e fim do lote.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.35\textwidth]{figures/img4.png}
+\caption{Wireframe Manutenção. Fonte: Elaboração própria, 2026}
+\label{fig:manutencao}
+\end{figure}
+
+A tela de Manutenção organiza revisões periódicas, equipamentos com QR code e controle de paradas (preventiva e corretiva). Possui campos para registrar o equipamento envolvido, tipo de manutenção, data, causa, período de parada e responsável.
+
+\subsubsection{Arquitetura da Solução}
+O aplicativo foi desenvolvido com tecnologias web modernas, seguindo uma arquitetura full-stack:
+
+\begin{itemize}
+\item \textbf{Frontend:} React 19 com TypeScript (REACT, 2026), utilizando TanStack Router para roteamento baseado em arquivos e TanStack Start para renderização no servidor (SSR) (TANSTACK, 2026). Para estilização, utiliza Tailwind CSS v4 com componentes acessíveis do Radix UI. A visualização de dados é feita com Recharts, e formulários com validação são construídos com React Hook Form e Zod.
+\item \textbf{Banco de dados e Backend:} Supabase (PostgreSQL + Auth + Real-time) com Row Level Security (RLS) para controle de acesso por perfil de usuário (SUPABASE, 2026).
+\item \textbf{Estrutura de rotas:} Inclui módulos para login, cadastro, dashboard, cadastros, produção, pedidos, estoque, envase, compras, perdas, manutenção, atrasos, alertas, relatórios e configurações.
+\item \textbf{Perfis de acesso:} administrador, gestor, produção, estoque, vendas e manutenção.
+\end{itemize}
+
+De modo geral, os resultados preliminares confirmam a pertinência da proposta. O Tintas MGMT possui uma estrutura inicial capaz de receber os dados da empresa e transformá-los em informações organizadas. O protótipo desenvolvido representa um primeiro passo para a criação de uma solução de acompanhamento operacional e estabelece a base para os ajustes que serão realizados na continuidade do projeto.
+
+\newpage
+\section{RESULTADOS: SOLUÇÃO FINAL}
+
+[TODA ESTA SEÇÃO FOI COPIADA DO MODELO, BASE PARA REESCREVER]
+
+O grupo demonstra a criação de soluções com base na metodologia indicada pela UNIVESP, respeitando os passos ouvir, criar e implementar. Nesta seção, são apresentados os resultados obtidos em cada um dos passos para a construção da solução.
+
+É importante que o grupo inclua imagens, storyboards ou ilustrações que demonstrem visualmente a solução adotada, junto aos passos desenvolvidos.
+
+Dessa forma, sugere-se que, neste capítulo, seja feita a descrição detalhada do protótipo e de sua aplicação, com imagens e relatos de como se deu o processo de construção da solução final apresentada pelo grupo. Espera-se que o grupo demonstre quais foram as melhorias realizadas na solução final, a partir dos feedbacks coletados junto à comunidade onde o projeto foi desenvolvido.
+
+Importante: quando se tratar de projetos desenvolvidos com a participação de crianças e adolescentes, não é permitida a inclusão de fotos deles sem a autorização de seus pais ou responsáveis.
+
+[TODA ESTA SEÇÃO FOI COPIADA DO MODELO, BASE PARA REESCREVER]
+
+\subsubsection{Solução adotada}
+[PLACEHOLDER PARA DESCRIÇÃO DETALHADA DA SOLUÇÃO FINAL ADOTADA, INCLUINDO ARQUITETURA, TECNOLOGIAS UTILIZADAS E FUNCIONALIDADES IMPLEMENTADAS.]
+
+\subsubsection{Resultados obtidos}
+[PLACEHOLDER PARA APRESENTAÇÃO DOS RESULTADOS OBTIDOS EM CADA ETAPA DA METODOLOGIA (OUVIR, CRIAR, IMPLEMENTAR), COM INDICAÇÃO DE MELHORIAS REALIZADAS COM BASE EM FEEDBACKS.]
+
+\subsubsection{Feedback da comunidade}
+[PLACEHOLDER PARA REGISTROS DE FEEDBACKS COLETADOS JUNTO À COMUNIDADE ONDE O PROJETO FOI DESENVOLVIDO, INCLUINDO SUGESTÕES DE MELHORIA E VALIDAÇÕES DA SOLUÇÃO.]
+
+\newpage
+\section{CONSIDERAÇÕES FINAIS}
+
+Deve-se retomar os objetivos e o contexto em que o Projeto Integrador foi desenvolvido e apresentar:
+
+\begin{itemize}
+\item Retomada dos resultados à luz das referências estudadas;
+\item Contribuições e limitações do trabalho realizado;
+\item Impacto da solução na comunidade externa.
+\end{itemize}
+
+[PLACEHOLDER PARA CONSIDERAÇÕES FINAIS DETALHADAS, CONECTANDO OS RESULTADOS DO PROJETO AOS OBJETIVOS INICIAIS E DISCUTINDO O IMPACTO DA SOLUÇÃO NA COMUNIDADE EXTERNA.]
+
+\newpage
+\section{REFERÊNCIAS}
+\linespread{1}\selectfont\setlength{\baselineskip}{12pt}
+
+ELMASRI, Ramez; NAVATHE, Shamkant. 
+{\bfseries Sistemas de Banco de Dados}.
+7. ed. São Paulo: Pearson, 2019. 
+
+\bigskip
+
+IBM. 
+{\bfseries Cross-Industry Standard Process for Data Mining – CRISP-DM}. 
+Disponível em: https://www.ibm.com/docs/en/spss-modeler/cross-industry-standard-process-for-data-mining. Acesso em: 15 set. 2026. 
+
+\bigskip
+
+NIELSEN, Jakob. 
+{\bfseries Usability Engineering}. 
+Cambridge: Academic Press, 1994. 
+
+\bigskip
+
+NORMAN, Donald. 
+{\bfseries The Design of Everyday Things}. 
+Revised and expanded edition. New York: Basic Books, 2013. 
+
+\bigskip
+
+OWASP. 
+{\bfseries OWASP Top 10}. 
+2021. Disponível em: https://owasp.org/Top10/. Acesso em: 15 set. 2026. 
+
+\bigskip
+
+REACT. 
+{\bfseries React Learn}. 
+Disponível em: https://react.dev/learn. Acesso em: 15 set. 2026. 
+
+\bigskip
+
+SUPABASE. 
+{\bfseries Local Development and Row Level Security Documentation}. 
+Disponível em: https://supabase.com/docs/. Acesso em: 15 set. 2026. 
+
+\bigskip
+
+TANSTACK. 
+{\bfseries TanStack Router Documentation}. 
+Disponível em: https://tanstack.com/router/latest/docs/framework/react/overview. Acesso em: 15 set. 2026. 
+
+\end{document}
